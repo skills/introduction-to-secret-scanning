@@ -9,34 +9,59 @@
   Add your open source license, GitHub uses the MIT license.
 -->
 
-# TBD-course-name
+# Introduction to secret scanning
 
-_TBD-course-description_
+_GitHub scans repositories for known types of secrets, to prevent fraudulent use of secrets that were committed accidentally. In this GitHub Skills course you will learn how to enable secret scanning to identify serets and prevent them from being committed to your repository._
 
 </header>
 
 <!--
-  <<< Author notes: Step 1 >>>
-  Choose 3-5 steps for your course.
-  The first step is always the hardest, so pick something easy!
-  Link to docs.github.com for further explanations.
-  Encourage users to open new tabs for steps!
-  TBD-step-1-notes.
+  <<< Author notes: Course start >>>
+  Include start button, a note about Actions minutes,
+  and tell the learner why they should take the course.
 -->
 
-## Step 1: TBD-step-1-name
+## Welcome
 
-_Welcome to "TBD-course-name"! :wave:_
+Plain-text credentials accidentally stored in repositories on GitHub are a common target for attackers.  In fact, we find well over a million tokens stored on the GitHub platform each year. Secret scanning is a powerful tool which allows teams to identify these plain-text credentials, remove them, and create rules to prevent them from being written to GitHub in the first place.
 
-TBD-step-1-information
+Secret scanning is available for free for all public repositories. Organizations that need secret scanning capabilities for private repositories should review [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security). GitHub Advanced Security allows you to take advantage of additional security features such as [code scanning](https://docs.github.com/en/enterprise-cloud@latest/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning), [dependency review](https://docs.github.com/en/enterprise-cloud@latest/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review), and [security overview](https://docs.github.com/en/enterprise-cloud@latest/code-security/security-overview/about-security-overview).
 
-**What is _TBD-term-1_**: TBD-definition-1
+- **Who is this for**: Developers, DevOps Engineers, security teams.
+- **What you'll learn**: How to identify plain-text credentials in your repository and how to prevent them from being written in the first place.
+- **Prerequisites**: Basics of git and GitHub functionality. We recommend you complete [Introduction to GitHub](https://github.com/skills/introduction-to-github)
+- **How long**: This course takes less than 15 minutes to complete.
 
-### :keyboard: Activity: TBD-step-1-name
+In this course, you will:
 
-1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
-1. TBD-step-1-instructions.
-1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
+1. Enable secret scanning
+2. Identify secrets stored in your repository
+3. Enable push protection
+4. Stop secrets from being written to your repository
+
+### How to start this course
+
+<!-- For start course, run in JavaScript:
+'https://github.com/new?' + new URLSearchParams({
+  template_owner: 'TBD-organization',
+  template_name: 'TBD-course-name',
+  owner: '@me',
+  name: 'TBD-organization-TBD-course-name',
+  description: 'My clone repository',
+  visibility: 'public',
+}).toString()
+-->
+
+[TODO - Change source of skill]
+
+[![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=skills&template_name=introduction-to-secret-scanning&owner=%40me&name=skills-introduction-to-secret-scanning&description=GitHub+Skills:+Introduction+to+Secret+Scanning&visibility=public)
+
+1. Right-click **Start course** and open the link in a new tab.
+2. In the new tab, most of the prompts will automatically fill in for you.
+   - For owner, choose your personal account or an organization to host the repository.
+   - You will need to make the repository public, as private repositories do not have access to secret scanning without a [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security) license.
+   - Scroll down and click the **Create repository** button at the bottom of the form.
+3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
 <footer>
 
