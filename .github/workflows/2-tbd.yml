@@ -6,9 +6,9 @@ name: Step 2, TBD-step-2-name
 # This will run every time we TBD-step-2-event-desc.
 # Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
-  workflow_dispatch:
-  # Add events that trigger this workflow.
-  # TBD-step-2-event:
+  push:
+    paths:
+      - credentials.yml
 
 # Reference: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
@@ -61,5 +61,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 2
-          to_step: 3
-          branch_name: tbd-branch-name
+          to_step: X
+          branch_name: main
