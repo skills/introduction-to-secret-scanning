@@ -16,108 +16,52 @@ _GitHub scans repositories for known types of secrets, to prevent fraudulent use
 </header>
 
 <!--
-  <<< Author notes: Step 2 >>>
-  Start this step by acknowledging the previous step.
-  Define terms and link to docs.github.com.
-  TBD-step-2-notes.
+  <<< Author notes: Course start >>>
+  Include start button, a note about Actions minutes,
+  and tell the learner why they should take the course.
 -->
 
-## Step 2: Review and close secret scanning alerts
+## Welcome
 
-_You did Step 1: Enable secret scanning! :tada:_
+Plain-text credentials accidentally stored in repositories on GitHub are a common target for attackers.  In fact, we find well over a million tokens stored on the GitHub platform each year. Secret scanning is a powerful tool which allows teams to identify these plain-text credentials, remove them, and create rules to prevent them from being written to GitHub in the first place.
 
-In the last step, you enabled secret scanning on the repository and committed an AWS credential to the repository. In this step, you'll first review the secret scanning alerts. Afterward, you'll enable push protection which prevents you from accidentally writing credentials to a repository. Finally, you'll attempt to write a new credential to see how push protection works.
+Secret scanning is available for free for all public repositories. Organizations that need secret scanning capabilities for private repositories should review [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security). GitHub Advanced Security allows you to take advantage of additional security features such as [code scanning](https://docs.github.com/en/enterprise-cloud@latest/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning), [dependency review](https://docs.github.com/en/enterprise-cloud@latest/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review), and [security overview](https://docs.github.com/en/enterprise-cloud@latest/code-security/security-overview/about-security-overview).
 
-### :keyboard: Activity 1: View all secret scanning alerts
+- **Who is this for**: Developers, DevOps Engineers, security teams.
+- **What you'll learn**: How to identify plain-text credentials in your repository and how to prevent them from being written in the first place.
+- **Prerequisites**: Basics of git and GitHub functionality. We recommend you complete [Introduction to GitHub](https://github.com/skills/introduction-to-github)
+- **How long**: This course takes less than 15 minutes to complete.
 
-1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
-2. Navigate to the **Security** tab in the top navigation bar of your repository.
-3. Select **Secret scanning** under the "Vulnerability alerts" heading in left-side navigation bar.
+In this course, you will:
 
-This page contains the list of secret scanning alerts. You can filter and sort this page based on criteria such as the alert state (open or closed), validity, and secret type. You will see two different alerts listed here.
- - **Amazon AWS Secret Access Key**: This is the access key you committed in the last step
- - **Amazon AWS Access Key ID**: This is the key ID committed in the last step
- - **GitHub Personal Access Token**: This token was already in the `credentials.yml`before you got started
+1. Enable secret scanning
+2. Identify secrets stored in your repository
+3. Enable push protection
+4. Stop secrets from being written to your repository
 
-### :keyboard: Activity 2: Review a secret scanning alert
+### How to start this course
 
-In this activity, you will explore the alert UI. You'll review the validity of the secret and identify where the secret was detected in the repository. 
+<!-- For start course, run in JavaScript:
+'https://github.com/new?' + new URLSearchParams({
+  template_owner: 'TBD-organization',
+  template_name: 'TBD-course-name',
+  owner: '@me',
+  name: 'TBD-organization-TBD-course-name',
+  description: 'My clone repository',
+  visibility: 'public',
+}).toString()
+-->
 
-Open the **Amazon AWS Access Key ID** alert.
+[TODO - Change source of skill]
 
-**Alert status:** This section identifies the current status of the alert (open or closed) and identifies when the alert was first detected.
+[![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=leftrightleft&template_name=skills-secret-scanning&owner=%40me&name=skills-introduction-to-secret-scanning&description=GitHub+Skills:+Introduction+to+Secret+Scanning&visibility=public)
 
-![alert-status.png](/images/alert-status.png)
-
-**Alert validity state:** Secret scanning checks the validity state with certain partners to understand if the token is currently active in the partner platform. This section shows the validity state. The validity states include "Active", "Inactive", and "Possibly active". A secret will be in the "Possibly active" state until the partner validates that it is either active or inactive.
-
-![alert-validity-state.png](/images/alert-validity-state.png)
-
-**Secret location:** This section describes the locations where the secret was identified in your repository. If the secret exists in multiple files, secret scanning will link to each file. The committer, a link to the commit sha, and the commit date are also included for each location.
-
-![secret-location.png](/images/secret-location.png)
-
-**Alert audit trail:** The alert audit trail contains any changes to the state of the alert as well as who made the change. In this example, the alert only has an "Opened" event. If the alert is closed, a new event will be added to the audit trail.
-
-![audit-trail.png](/images/audit-trail.png)
-
-### :keyboard: Activity 3: Close an alert
-
-When secret scanning finds a secret in your repository, the first thing you should do is disable that secret on the provider side. This prevents any further use of that credential. Once the secret has been disabled, the next step is to close the alert by marking it as "Revoked". In this activity, you will open an alert that has been validated as "Inactive" by secret scanning, then mark that alert as "Revoked" in secret scanning.
-
-1. From the list of secret scanning alerts (in your other tab), open the alert titled **GitHub Personal Access Token**.
-2. At the top of this alert, note that this alert is marked as "Secret inactive on github.com". Secret scanning has already validated this credential and found that it is disabled.
-3. Select the **Close as** dropdown
-4. Choose **Revoked**
-5. Enter a comment in the text box
-6. Choose **Close alert**
-   ![revoke-token.png](/images/revoke-token.png)
-7. Note that the alert has changed state to "Closed" and that a new entry has been added to the audit trail at the bottom of the alert.
-
-## Step 3: Enable push protection
-
-_Way to go! You completed Step 2: Review secret scanning alerts  :tada:_
-
-Up to now, you've learned how to identify secrets already stored in your repository. In this section, you will enable push protection on the repository to prevent new secrets from being written to the repository.
-
-**What is push protection**: When code is being written to GitHub (a push), secret scanning checks for high-confidence secrets (those identified with a low false positive rate). Secret scanning lists any secrets it detects so the author can review the secrets and remove them or, if needed, allow those secrets to be pushed.
-
-### :keyboard: Activity 1: Enable push protection
-
-1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
-2. Navigate to **Settings** on the top navigation bar
-3. Under the "Security" section on the left side, select **Code security and analysis**.
-4. Scroll to the bottom of the page and select **Enable** next to "Push Protection"
-
-### :keyboard: Activity 2: Attempt to push a secret
-
-Now that you have enabled secret scanning push protection, certain new secrets will be blocked from being written to the repository. In this activity you will commit a new credential to the repository to experience the block protection.
-
-1. In your other browswer tab, click **Code** from the top navigation bar.
-2. Open the `credentials.yml` file.
-3. Click the **Edit** button (pencil icon) to the right.
-4. Copy and paste the following string into the end of the file:
-```  
-  github-token: github_pat_<REMOVEME>11A4YXR6Y0v36CYFkuT5I1_ZRWX91c8k0waSN6x7AiVJ6zZ9ZHUQXBblBqFQpKd23V6CL7MWMPopnmBxzn
-```
-5. Delete `<REMOVEME>` from the string you just pasted. The `<REMOVEME>` string is there so secret scanning doesn't create an alert before you're able to test push protection. Your file should look like this:
-
-![push-protection.png](/images/push-protection.png)
-
- 5. Select **Commit changes...**
- 6. Select **Commit changes**
- 7. At this point, an alert will show on your page informing you that a new secret is being added to the repository.
-
-### :keyboard: Activity 3: Bypass push protection
-
-Now that you're aware of the secret in your commit, you should remove the secret from the commit and commit history, then attempt the push again. In some cases, you may be willing to accept the risk of adding a secret to your repository. In those situations, you can choose to bypass push protection. In this activity, you will bypass push protection and write the token to your repository (don't worry, the example token is safe).
-
-1. Select the radio button next to **It's used in tests**
-2. Click **Allow secret**
-3. A notification will show saying that you can now commit the secret.
-4. Select **Commit changes...** again.
-5. Select **Commit changes**
-6. Wait about 20 seconds then refresh this page (the one you're following instructions from). GitHub Actions will automatically update to the next step.
+1. Right-click **Start course** and open the link in a new tab.
+2. In the new tab, most of the prompts will automatically fill in for you.
+   - For owner, choose your personal account or an organization to host the repository.
+   - You will need to make the repository public, as private repositories do not have access to secret scanning without a [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security) license.
+   - Scroll down and click the **Create repository** button at the bottom of the form.
+3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
 <footer>
 
