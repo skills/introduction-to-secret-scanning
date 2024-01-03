@@ -17,7 +17,7 @@ In the last step, you enabled secret scanning on the repository and committed an
 2. Navigate to the **Security** tab in the top navigation bar of your repository.
 3. Select **Secret scanning** under the "Vulnerability alerts" heading in left-side navigation bar.
 
-This page contains the list of secret scanning alerts. You can filter and sort this page based on criteria such as the alert state (open or closed), validity, and secret type. You will see two different alerts listed here.
+This page contains the list of secret scanning alerts. You can filter and sort this page based on criteria such as the alert state (open or closed), validity, and secret type. You will see three alerts listed here.
  - **Amazon AWS Secret Access Key**: This is the access key you committed in the last step
  - **Amazon AWS Access Key ID**: This is the key ID committed in the last step
  - **GitHub Personal Access Token**: This token was already in the `credentials.yml`before you got started
