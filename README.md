@@ -16,52 +16,54 @@ _GitHub scans repositories for known types of secrets, to prevent fraudulent use
 </header>
 
 <!--
-  <<< Author notes: Course start >>>
-  Include start button, a note about Actions minutes,
-  and tell the learner why they should take the course.
+  <<< Author notes: Step 1 >>>
+  Choose 3-5 steps for your course.
+  The first step is always the hardest, so pick something easy!
+  Link to docs.github.com for further explanations.
+  Encourage users to open new tabs for steps!
+  TBD-step-1-notes.
 -->
 
-## Welcome
+## Step 1: Enable Secret Scanning
 
-Plain-text credentials accidentally stored in repositories on GitHub are a common target for attackers.  In fact, we find well over a million tokens stored on the GitHub platform each year. Secret scanning is a powerful tool which allows teams to identify these plain-text credentials, remove them, and create rules to prevent them from being written to GitHub in the first place.
+_Welcome to "Introduction to Secret Scanning"! :wave:_
 
-Secret scanning is available for free for all public repositories. Organizations that need secret scanning capabilities for private repositories should review [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security). GitHub Advanced Security allows you to take advantage of additional security features such as [code scanning](https://docs.github.com/en/enterprise-cloud@latest/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning), [dependency review](https://docs.github.com/en/enterprise-cloud@latest/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review), and [security overview](https://docs.github.com/en/enterprise-cloud@latest/code-security/security-overview/about-security-overview).
+In this step, you will enable secret scanning on this repository. Once secret scanning is enabled, you will add a new credential to see how secret scanning identifies the credential. 
 
-- **Who is this for**: Developers, DevOps Engineers, security teams.
-- **What you'll learn**: How to identify plain-text credentials in your repository and how to prevent them from being written in the first place.
-- **Prerequisites**: Basics of git and GitHub functionality. We recommend you complete [Introduction to GitHub](https://github.com/skills/introduction-to-github)
-- **How long**: This course takes less than 15 minutes to complete.
+**What is a secret**: In the context of secret scanning, a secret (or credential) is a plain-text string that autorizes a user to any number of third-party services. Examples could be AWS secret access keys/ID's, Google API keys, or Stripe API tokens. View our entire list of supported patterns [here](https://docs.github.com/en/code-security/secret-scanning/secret-scanning-patterns#supported-secrets).
 
-In this course, you will:
+### :keyboard: Activity 1: Enable secret scanning
 
-1. Enable secret scanning
-2. Identify secrets stored in your repository
-3. Enable push protection
-4. Stop secrets from being written to your repository
+1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
+2. In your newly created repository, select **Settings** from the top navigation bar.
+3. Under the **Security** section on the left side, select **Code security and analysis**.
+4. Scroll to the bottom of this page and select the **Enable** button next to "Secret scanning"
+> [!IMPORTANT]
+> When you enable secret scanning, the option to enable push protection will show up. Don't enable push protection yet. 
 
-### How to start this course
+### :keyboard: Activity 2: Commit a token
 
-<!-- For start course, run in JavaScript:
-'https://github.com/new?' + new URLSearchParams({
-  template_owner: 'TBD-organization',
-  template_name: 'TBD-course-name',
-  owner: '@me',
-  name: 'TBD-organization-TBD-course-name',
-  description: 'My clone repository',
-  visibility: 'public',
-}).toString()
--->
+Now that you have secret scanning enabled in this repository, let's commit a new token to see how it works. You'll commit an AWS key and access ID to the repository. Don't worry, this is an inactive token that can't be used to log in to AWS.
 
-[TODO - Change source of skill]
+1. Like the first activity, you will need to work on these steps in a second browser tab.
+2. Click the Code tab in your repository.
+3. Select the `credentials.yml` file.
+4. Click the Edit button to the right.
+   
+  ![edit-credentials-file](/images/edit-credentials-file.png)
 
-[![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=skills&template_name=introduction-to-secret-scanning&owner=%40me&name=skills-introduction-to-secret-scanning&description=GitHub+Skills:+Introduction+to+Secret+Scanning&visibility=public)
+5. Copy the following text and paste it to the bottom of the `credentials.yml` file.
 
-1. Right-click **Start course** and open the link in a new tab.
-2. In the new tab, most of the prompts will automatically fill in for you.
-   - For owner, choose your personal account or an organization to host the repository.
-   - You will need to make the repository public, as private repositories do not have access to secret scanning without a [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security) license.
-   - Scroll down and click the **Create repository** button at the bottom of the form.
-3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
+``` yaml
+default:
+  aws_access_key_id: AKIAQYLPMN5HNM4OZ56B
+  aws_secret_access_key: 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
+  output: json
+  region: us-east-2
+```
+
+6. Click **Commit changes...** from the top right. The "Propose changes" window will pop up. Leave the defaults configured, and click **Commit changes** again.
+7. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
 
 <footer>
 
