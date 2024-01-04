@@ -1,4 +1,4 @@
-name: Step 2, TBD-step-2-name
+name: Step 2, Review and close secret scanning alerts
 
 # This step triggers after TBD-step-2-event-desc.
 # This workflow updates from step 2 to step 3.

@@ -1,9 +1,9 @@
-name: Step 1, TBD-step-1-name
+name: Step 1, Enable secret scanning
 
-# This step triggers after TBD-step-1-event-desc.
+# This step triggers after commit-to-credential-file-desc.
 # This workflow updates from step 1 to step 2.
 
-# This will run every time we TBD-step-1-event-desc.
+# This will run every time we commit-to-credential-file-desc.
 # Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   push:
@@ -30,8 +30,8 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
-  on_TBD-step-1-event:
-    name: On TBD-step-1-event
+  on_commit-to-credential-file:
+    name: On commit-to-credential-file
     needs: get_current_step
 
     # We will only run this action when:
