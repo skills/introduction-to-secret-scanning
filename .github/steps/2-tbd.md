@@ -30,19 +30,19 @@ Open the **Amazon AWS Access Key ID** alert.
 
 **Alert status:** This section identifies the current status of the alert (open or closed) and identifies when the alert was first detected.
 
-![alert-status.png](/images/alert-status.png)
+![alert-status](/images/alert-status.png)
 
 **Alert validity state:** Secret scanning checks the validity state with certain partners to understand if the token is currently active in the partner platform. This section shows the validity state. The validity states include "Active", "Inactive", and "Possibly active". A secret will be in the "Possibly active" state until the partner validates that it is either active or inactive.
 
-![alert-validity-state.png](/images/alert-validity-state.png)
+![alert-validity-state](/images/alert-validity-state.png)
 
 **Secret location:** This section describes the locations where the secret was identified in your repository. If the secret exists in multiple files, secret scanning will link to each file. The committer, a link to the commit sha, and the commit date are also included for each location.
 
-![secret-location.png](/images/secret-location.png)
+![secret-location](/images/secret-location.png)
 
 **Alert audit trail:** The alert audit trail contains any changes to the state of the alert as well as who made the change. In this example, the alert only has an "Opened" event. If the alert is closed, a new event will be added to the audit trail.
 
-![audit-trail.png](/images/audit-trail.png)
+![audit-trail](/images/audit-trail.png)
 
 ### :keyboard: Activity 2.3: Close an alert
 
@@ -55,7 +55,7 @@ When secret scanning finds a secret in your repository, the first thing you shou
 4. Choose **Revoked**
 5. Enter a comment in the text box
 6. Choose **Close alert**
-   ![revoke-token.png](/images/revoke-token.png)
+   ![revoke-token](/images/revoke-token.png)
 7. Note that the alert has changed state to "Closed" and that a new entry has been added to the audit trail at the bottom of the alert.
 
 ## Step 3: Enable push protection
@@ -86,7 +86,7 @@ Now that you have enabled secret scanning push protection, certain new secrets w
 ```
 5. Delete `<REMOVEME>` from the string you just pasted. The `<REMOVEME>` string is there so secret scanning doesn't create an alert before you're able to test push protection. Your file should look like this:
 
-![push-protection.png](/images/push-protection.png)
+![push-protection](/images/push-protection.png)
 
  5. Select **Commit changes...**
  6. Select **Commit changes**
