@@ -15,7 +15,7 @@ In the last step, you enabled secret scanning on the repository and committed an
 
 1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
 2. Navigate to the **Security** tab in the top navigation bar of your repository.
-3. Select **Secret scanning** under the "Vulnerability alerts" heading in left-side navigation bar.
+3. Select **Secret scanning** in left-side navigation bar.
 
 This page contains the list of secret scanning alerts. You can filter and sort this page based on criteria such as the alert state (open or closed), validity, and secret type. You will see three alerts listed here.
  - **Amazon AWS Secret Access Key**: This is the access key you committed in the last step
