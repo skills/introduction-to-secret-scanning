@@ -28,6 +28,6 @@ It's important to note that secret scanning capabilities are available for free 
 ### What's next?
 
 - [We'd love to hear what you thought of this course](TBD-feedback-link).
-- [Take another TBD-organization Course](https://github.com/TBD-organization).
+- [Take another Skills Course](https://github.com/skills).
 - [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
 - To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
