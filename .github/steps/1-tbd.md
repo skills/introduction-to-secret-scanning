@@ -22,7 +22,7 @@ In this step, you will enable secret scanning on this repository. Once secret sc
 3. Under the **Security** section on the left side, select **Code security and analysis**.
 4. Scroll to the bottom of this page and select the **Enable** button next to "Secret scanning"
 > [!IMPORTANT]
-> When you enable secret scanning, you may receive an email notifying you of credentials in your repository. Don't worry! We're only working with deactivated tokens in this Skills course. 
+> When you enable secret scanning, you may receive an email notification about credentials in your repository. Don't worry! The tokens in this Skills repo are inactive. There is no risk to your environment. 
 
 ### :keyboard: Activity 1.2: Commit a token
 
