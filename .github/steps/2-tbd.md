@@ -11,7 +11,7 @@ _You did Step 1: Enable secret scanning! :tada:_
 
 In the last step, you enabled secret scanning on the repository and committed an AWS credential to the repository. In this step, you'll first review the secret scanning alerts. Afterward, you'll enable push protection which prevents you from accidentally writing credentials to a repository. Finally, you'll attempt to write a new credential to see how push protection works.
 
-### :keyboard: Activity 1: View all secret scanning alerts
+### :keyboard: Activity 2.1: View all secret scanning alerts
 
 1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
 2. Navigate to the **Security** tab in the top navigation bar of your repository.
@@ -22,7 +22,7 @@ This page contains the list of secret scanning alerts. You can filter and sort t
  - **Amazon AWS Access Key ID**: This is the key ID committed in the last step
  - **GitHub Personal Access Token**: This token was already in the `credentials.yml`before you got started
 
-### :keyboard: Activity 2: Review a secret scanning alert
+### :keyboard: Activity 2.2: Review a secret scanning alert
 
 In this activity, you will explore the alert UI. You'll review the validity of the secret and identify where the secret was detected in the repository. 
 
@@ -44,7 +44,7 @@ Open the **Amazon AWS Access Key ID** alert.
 
 ![audit-trail.png](/images/audit-trail.png)
 
-### :keyboard: Activity 3: Close an alert
+### :keyboard: Activity 2.3: Close an alert
 
 When secret scanning finds a secret in your repository, the first thing you should do is disable that secret on the provider side. This prevents any further use of that credential. Once the secret has been disabled, the next step is to close the alert by marking it as "Revoked". In this activity, you will open an alert that has been validated as "Inactive" by secret scanning, then mark that alert as "Revoked" in secret scanning.
 
@@ -65,14 +65,14 @@ Up to now, you've learned how to identify secrets already stored in your reposit
 
 **What is push protection**: When code is being written to GitHub (a push), secret scanning checks for high-confidence secrets (those identified with a low false positive rate). Secret scanning lists any secrets it detects so the author can review the secrets and remove them or, if needed, allow those secrets to be pushed.
 
-### :keyboard: Activity 1: Enable push protection
+### :keyboard: Activity 3.1: Enable push protection
 
 1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
 2. Navigate to **Settings** on the top navigation bar
 3. Under the "Security" section on the left side, select **Code security and analysis**.
 4. Scroll to the bottom of the page and select **Enable** next to "Push Protection"
 
-### :keyboard: Activity 2: Attempt to push a secret
+### :keyboard: Activity 3.2: Attempt to push a secret
 
 Now that you have enabled secret scanning push protection, certain new secrets will be blocked from being written to the repository. In this activity you will commit a new credential to the repository to experience the block protection.
 
@@ -91,7 +91,7 @@ Now that you have enabled secret scanning push protection, certain new secrets w
  6. Select **Commit changes**
  7. At this point, an alert will show on your page informing you that a new secret is being added to the repository.
 
-### :keyboard: Activity 3: Bypass push protection
+### :keyboard: Activity 3.3: Bypass push protection
 
 Now that you're aware of the secret in your commit, you should remove the secret from the commit and commit history, then attempt the push again. In some cases, you may be willing to accept the risk of adding a secret to your repository. In those situations, you can choose to bypass push protection. In this activity, you will bypass push protection and write the token to your repository (don't worry, the example token is safe).
 
