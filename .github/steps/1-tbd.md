@@ -15,7 +15,7 @@ In this step, you will enable secret scanning on this repository. Once secret sc
 
 **What is a secret**: In the context of secret scanning, a secret (or credential) is a plain-text string that autorizes a user to any number of third-party services. Examples could be AWS secret access keys/ID's, Google API keys, or Stripe API tokens. View our entire list of supported patterns [here](https://docs.github.com/en/code-security/secret-scanning/secret-scanning-patterns#supported-secrets).
 
-### :keyboard: Activity 1: Enable secret scanning
+### :keyboard: Activity 1.1: Enable secret scanning
 
 1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
 2. In your newly created repository, select **Settings** from the top navigation bar.
@@ -24,7 +24,7 @@ In this step, you will enable secret scanning on this repository. Once secret sc
 > [!IMPORTANT]
 > When you enable secret scanning, the option to enable push protection will show up. Don't enable push protection yet. 
 
-### :keyboard: Activity 2: Commit a token
+### :keyboard: Activity 1.2: Commit a token
 
 Now that you have secret scanning enabled in this repository, let's commit a new token to see how it works. You'll commit an AWS key and access ID to the repository. Don't worry, this is an inactive token that can't be used to log in to AWS.
 
