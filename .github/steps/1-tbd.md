@@ -21,8 +21,9 @@ In this step, you will enable secret scanning on this repository. Once secret sc
 2. In your newly created repository, select **Settings** from the top navigation bar.
 3. Under the **Security** section on the left side, select **Code security and analysis**.
 4. Scroll to the bottom of this page and select the **Enable** button next to "Secret scanning"
-   > [!IMPORTANT]
-   > When you enable secret scanning, you may receive an email notification about credentials in your repository. Don't worry! The tokens in this Skills repo are inactive. There is no risk to your environment.
+
+> [!IMPORTANT]
+> When you enable secret scanning, you may receive an email notification about credentials in your repository. Don't worry! The tokens in this Skills repo are inactive. There is no risk to your environment.
 
 ### :keyboard: Activity 1.2: Commit a token
 
@@ -33,17 +34,17 @@ Now that you have secret scanning enabled in this repository, let's commit a new
 3. Select the `credentials.yml` file.
 4. Click the Edit button to the right.
 
-![A screenshot of credentials.yml on the GitHub web interface with the edit button outlined](/images/edit-credentials-file.png)
+    ![A screenshot of credentials.yml on the GitHub web interface with the edit button outlined](/images/edit-credentials-file.png)
 
 5. Copy the following text and paste it to the bottom of the `credentials.yml` file.
 
-```yaml
-default:
-  aws_access_key_id: AKIAQYLPMN5HNM4OZ56B
-  aws_secret_access_key: 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
-  output: json
-  region: us-east-2
-```
+    ```yaml
+    default:
+      aws_access_key_id: AKIAQYLPMN5HNM4OZ56B
+      aws_secret_access_key: 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
+      output: json
+      region: us-east-2
+    ```
 
 6. Click **Commit changes...** from the top right. The "Propose changes" window will pop up. Leave the defaults configured, and click **Commit changes** again.
 7. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
