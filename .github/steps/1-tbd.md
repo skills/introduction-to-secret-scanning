@@ -11,9 +11,9 @@
 
 _Welcome to "Introduction to Secret Scanning"! :wave:_
 
-In this step, you will enable secret scanning on this repository. Once secret scanning is enabled, you will add a new credential to see how secret scanning identifies the credential. 
+In this step, you will enable secret scanning on this repository. Once secret scanning is enabled, you will add a new credential to see how secret scanning identifies the credential.
 
-**What is a secret**: In the context of secret scanning, a secret (or credential) is a plain-text string that autorizes a user to any number of third-party services. Examples could be AWS secret access keys/ID's, Google API keys, or Stripe API tokens. View our entire list of supported patterns [here](https://docs.github.com/en/code-security/secret-scanning/secret-scanning-patterns#supported-secrets).
+**What is a secret**: In the context of secret scanning, a secret (or credential) is a plain-text string that autorizes a user to any number of third-party services. Examples could be AWS secret access keys/ID's, Google API keys, or Stripe API tokens. GitHub Docs host the [entire list of supported patterns](https://docs.github.com/en/code-security/secret-scanning/secret-scanning-patterns#supported-secrets).
 
 ### :keyboard: Activity 1.1: Enable secret scanning
 
@@ -21,8 +21,8 @@ In this step, you will enable secret scanning on this repository. Once secret sc
 2. In your newly created repository, select **Settings** from the top navigation bar.
 3. Under the **Security** section on the left side, select **Code security and analysis**.
 4. Scroll to the bottom of this page and select the **Enable** button next to "Secret scanning"
-> [!IMPORTANT]
-> When you enable secret scanning, you may receive an email notification about credentials in your repository. Don't worry! The tokens in this Skills repo are inactive. There is no risk to your environment. 
+   > [!IMPORTANT]
+   > When you enable secret scanning, you may receive an email notification about credentials in your repository. Don't worry! The tokens in this Skills repo are inactive. There is no risk to your environment.
 
 ### :keyboard: Activity 1.2: Commit a token
 
@@ -32,12 +32,12 @@ Now that you have secret scanning enabled in this repository, let's commit a new
 2. Click the Code tab in your repository.
 3. Select the `credentials.yml` file.
 4. Click the Edit button to the right.
-   
-  ![edit-credentials-file](/images/edit-credentials-file.png)
+
+![A screenshot of credentials.yml on the GitHub web interface with the edit button outlined](/images/edit-credentials-file.png)
 
 5. Copy the following text and paste it to the bottom of the `credentials.yml` file.
 
-``` yaml
+```yaml
 default:
   aws_access_key_id: AKIAQYLPMN5HNM4OZ56B
   aws_secret_access_key: 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
