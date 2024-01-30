@@ -83,13 +83,13 @@ Now that you have enabled secret scanning push protection, certain new secrets w
 3. Click the **Edit** button (pencil icon) to the right.
 4. Copy and paste the following string into the end of the file:
 
-```
-  github-token: github_pat_<REMOVEME>11A4YXR6Y0v36CYFkuT5I1_ZRWX91c8k0waSN6x7AiVJ6zZ9ZHUQXBblBqFQpKd23V6CL7MWMPopnmBxzn
-```
+    ```
+      github-token: github_pat_<REMOVEME>11A4YXR6Y0v36CYFkuT5I1_ZRWX91c8k0waSN6x7AiVJ6zZ9ZHUQXBblBqFQpKd23V6CL7MWMPopnmBxzn
+    ```
 
 5. Delete `<REMOVEME>` from the string you just pasted. The `<REMOVEME>` string is there so secret scanning doesn't create an alert before you're able to test push protection. Your file should look like this:
 
-![A screenshot of credentials.yml being edited in the GitHub web UI. A newly added github-token is highlighted.](/images/push-protection.png)
+    ![A screenshot of credentials.yml being edited in the GitHub web UI. A newly added github-token is highlighted.](/images/push-protection.png)
 
 5.  Select **Commit changes...**
 6.  Select **Commit changes**
