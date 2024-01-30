@@ -43,7 +43,7 @@ Open the **Amazon AWS Access Key ID** alert.
 
 **Alert audit trail:** The alert audit trail contains any changes to the state of the alert as well as who made the change. In this example, the alert only has an "Opened" event. If the alert is closed, a new event will be added to the audit trail.
 
-![A screenshot of the bottom of alert with the audit trail highlighted](/images/audit-trail.png)
+![A screenshot of the bottom of an alert with the audit trail highlighted](/images/audit-trail.png)
 
 ### :keyboard: Activity 2.3: Close an alert
 
