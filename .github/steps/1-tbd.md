@@ -13,14 +13,14 @@ _Welcome to "Introduction to Secret Scanning"! :wave:_
 
 In this step, you will enable secret scanning on this repository. Once secret scanning is enabled, you will add a new credential to see how secret scanning identifies the credential. 
 
-**What is a secret**: In the context of secret scanning, a secret (or credential) is a plain-text string that autorizes a user to any number of third-party services. Examples could be AWS secret access keys/ID's, Google API keys, or Stripe API tokens. View our entire list of supported patterns [here](https://docs.github.com/en/code-security/secret-scanning/secret-scanning-patterns#supported-secrets).
+**What is a secret**: In the context of secret scanning, a secret (or credential) is a plain-text string that authorizes a user to any number of third-party services. Examples could be AWS secret access keys/ID's, Google API keys, or Stripe API tokens. To view our entire list of supported patterns, see "[Supported secrets](https://docs.github.com/en/code-security/secret-scanning/secret-scanning-patterns#supported-secrets)" in the GitHub Docs.
 
 ### :keyboard: Activity 1.1: Enable secret scanning
 
 1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
 2. In your newly created repository, select **Settings** from the top navigation bar.
 3. Under the **Security** section on the left side, select **Code security and analysis**.
-4. Scroll to the bottom of this page and select the **Enable** button next to "Secret scanning"
+4. Scroll to the bottom of this page and select the **Enable** button next to "Secret scanning."
 > [!IMPORTANT]
 > When you enable secret scanning, you may receive an email notification about credentials in your repository. Don't worry! The tokens in this Skills repo are inactive. There is no risk to your environment. 
 
