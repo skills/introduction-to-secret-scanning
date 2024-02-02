@@ -29,7 +29,7 @@ Secret scanning is available for free for all public repositories. Organizations
 
 - **Who is this for**: Developers, DevOps Engineers, security teams.
 - **What you'll learn**: How to identify plain-text credentials in your repository and how to prevent them from being written in the first place.
-- **Prerequisites**: Basics of git and GitHub functionality. We recommend you complete [Introduction to GitHub](https://github.com/skills/introduction-to-github)
+- **Prerequisites**: Basics of git and GitHub functionality. We recommend you complete [Introduction to GitHub](https://github.com/skills/introduction-to-github).
 - **How long**: This course takes less than 15 minutes to complete.
 
 In this course, you will:
