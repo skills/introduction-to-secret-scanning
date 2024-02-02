@@ -18,9 +18,9 @@ In the last step, you enabled secret scanning on the repository and committed an
 3. Select **Secret scanning** in left-side navigation bar.
 
 This page contains the list of secret scanning alerts. You can filter and sort this page based on criteria such as the alert state (open or closed), validity, and secret type. You will see three alerts listed here.
- - **Amazon AWS Secret Access Key**: This is the access key you committed in the last step
- - **Amazon AWS Access Key ID**: This is the key ID committed in the last step
- - **GitHub Personal Access Token**: This token was already in the `credentials.yml`before you got started
+ - **Amazon AWS Secret Access Key**: This is the access key you committed in the last step.
+ - **Amazon AWS Access Key ID**: This is the key ID committed in the last step.
+ - **GitHub Personal Access Token**: This token was already in the `credentials.yml`before you got started.
 
 ### :keyboard: Activity 2.2: Review a secret scanning alert
 
@@ -51,10 +51,10 @@ When secret scanning finds a secret in your repository, the first thing you shou
 1. From the list of secret scanning alerts (in your other tab), open the alert titled **GitHub Personal Access Token**.
 2. At the top of this alert, note that this alert is marked as "Secret inactive on github.com". Secret scanning has already validated this credential and found that it is disabled. 
    **NOTE:** If the token has not yet been validated, click the **Verify secret** button.
-3. Select the **Close as** dropdown
-4. Choose **Revoked**
-5. Enter a comment in the text box
-6. Choose **Close alert**
+3. Select the **Close as** dropdown.
+4. Choose **Revoked**.
+5. Enter a comment in the text box.
+6. Choose **Close alert**.
    ![revoke-token](/images/revoke-token.png)
 7. Note that the alert has changed state to "Closed" and that a new entry has been added to the audit trail at the bottom of the alert.
 
@@ -69,9 +69,9 @@ Up to now, you've learned how to identify secrets already stored in your reposit
 ### :keyboard: Activity 3.1: Enable push protection
 
 1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
-2. Navigate to **Settings** on the top navigation bar
+2. Navigate to **Settings** on the top navigation bar.
 3. Under the "Security" section on the left side, select **Code security and analysis**.
-4. Scroll to the bottom of the page and select **Enable** next to "Push Protection"
+4. Scroll to the bottom of the page and select **Enable** next to "Push Protection."
 
 ### :keyboard: Activity 3.2: Attempt to push a secret
 
@@ -89,16 +89,16 @@ Now that you have enabled secret scanning push protection, certain new secrets w
 ![push-protection](/images/push-protection.png)
 
  5. Select **Commit changes...**
- 6. Select **Commit changes**
+ 6. Select **Commit changes**.
  7. At this point, an alert will show on your page informing you that a new secret is being added to the repository.
 
 ### :keyboard: Activity 3.3: Bypass push protection
 
 Now that you're aware of the secret in your commit, you should remove the secret from the commit and commit history, then attempt the push again. In some cases, you may be willing to accept the risk of adding a secret to your repository. In those situations, you can choose to bypass push protection. In this activity, you will bypass push protection and write the token to your repository (don't worry, the example token is safe).
 
-1. Select the radio button next to **It's used in tests**
-2. Click **Allow secret**
+1. Select the radio button next to **It's used in tests**.
+2. Click **Allow secret**.
 3. A notification will show saying that you can now commit the secret.
 4. Select **Commit changes...** again.
-5. Select **Commit changes**
+5. Select **Commit changes**.
 6. Wait about 20 seconds then refresh this page (the one you're following instructions from). GitHub Actions will automatically update to the next step.
