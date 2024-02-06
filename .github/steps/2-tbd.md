@@ -70,9 +70,9 @@ Up to now, you've learned how to identify secrets already stored in your reposit
 ### :keyboard: Activity 3.1: Enable push protection
 
 1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
-2. Navigate to **Settings** on the top navigation bar
+2. Navigate to **Settings** on the top navigation bar.
 3. Under the "Security" section on the left side, select **Code security and analysis**.
-4. Scroll to the bottom of the page and select **Enable** next to "Push Protection"
+4. Scroll to the bottom of the page and select **Enable** next to "Push Protection."
 
 ### :keyboard: Activity 3.2: Attempt to push a secret
 
@@ -91,17 +91,17 @@ Now that you have enabled secret scanning push protection, certain new secrets w
 
     ![A screenshot of credentials.yml being edited in the GitHub web UI. A newly added github-token is highlighted.](/images/push-protection.png)
 
-5.  Select **Commit changes...**
-6.  Select **Commit changes**
-7.  At this point, an alert will show on your page informing you that a new secret is being added to the repository.
+6.  Select **Commit changes...**
+7.  Select **Commit changes**
+8.  At this point, an alert will show on your page informing you that a new secret is being added to the repository.
 
 ### :keyboard: Activity 3.3: Bypass push protection
 
 Now that you're aware of the secret in your commit, you should remove the secret from the commit and commit history, then attempt the push again. In some cases, you may be willing to accept the risk of adding a secret to your repository. In those situations, you can choose to bypass push protection. In this activity, you will bypass push protection and write the token to your repository (don't worry, the example token is safe).
 
-1. Select the radio button next to **It's used in tests**
-2. Click **Allow secret**
+1. Select the radio button next to **It's used in tests**.
+2. Click **Allow secret**.
 3. A notification will show saying that you can now commit the secret.
 4. Select **Commit changes...** again.
-5. Select **Commit changes**
+5. Select **Commit changes**.
 6. Wait about 20 seconds then refresh this page (the one you're following instructions from). GitHub Actions will automatically update to the next step.
