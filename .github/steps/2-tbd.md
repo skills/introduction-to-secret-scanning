@@ -7,7 +7,7 @@
 
 ## Step 2: Review and close secret scanning alerts
 
-_You did Step 1: Enable secret scanning! :tada:_
+_You've enabled secret scanning and added a secret to test that the feature is working! :tada:_
 
 In the last step, you enabled secret scanning on the repository and committed an AWS credential to the repository. In this step, you'll first review the secret scanning alerts. Afterward, you'll enable push protection which prevents you from accidentally writing credentials to a repository. Finally, you'll attempt to write a new credential to see how push protection works.
 
@@ -21,43 +21,42 @@ This page contains the list of secret scanning alerts. You can filter and sort t
 
 - **Amazon AWS Secret Access Key**: This is the access key you committed in the last step
 - **Amazon AWS Access Key ID**: This is the key ID committed in the last step
-- **GitHub Personal Access Token**: This token was already in the `credentials.yml`before you got started
+- **GitHub Personal Access Token**: This token was already in the `credentials.yml` file before you started
 
 ### :keyboard: Activity 2.2: Review a secret scanning alert
 
-In this activity, you will explore the alert UI. You'll review the validity of the secret and identify where the secret was detected in the repository.
+In this activity, you will explore the alert. You'll review the validity of a secret and identify where the secret was detected in the repository.
 
-Open the **Amazon AWS Access Key ID** alert.
+Open the **Amazon AWS Access Key ID** alert and explore the information shown.
 
-**Alert status:** This section identifies the current status of the alert (open or closed) and identifies when the alert was first detected.
+- **Alert status:** This section shows the current status of the alert (open or closed) and reports when the alert was first detected.
 
-![A screenshot of the Amazon AWS Access Key ID alert with the currently open status highlighted](/images/alert-status.png)
+  ![Screenshot of the Amazon AWS Access Key ID alert with the currently open status highlighted.](/images/alert-status.png)
 
-**Alert validity state:** Secret scanning checks the validity state with certain partners to understand if the token is currently active in the partner platform. This section shows the validity state. The validity states include "Active", "Inactive", and "Possibly active". A secret will be in the "Possibly active" state until the partner validates that it is either active or inactive.
+- **Alert validity state:** Displayed only for tokens where secret scanning can contact the partner platform to check whether the token is currently active. This section shows the validity state: "Active", "Inactive", or "Possibly active", and how to remediate the exposed ssecret. A secret has the "Possibly active" state until the partner validates that it is either active or inactive.
 
-![A screenshot of the Amazon AWS Access Key ID alert with the validity state highlighted](/images/alert-validity-state.png)
+  ![Screenshot of the Amazon AWS Access Key ID alert with the validity state highlighted.](/images/alert-validity-state.png)
 
-**Secret location:** This section describes the locations where the secret was identified in your repository. If the secret exists in multiple files, secret scanning will link to each file. The committer, a link to the commit sha, and the commit date are also included for each location.
+- **Secret location:** This section describes the locations where the secret was identified in your repository. If the secret exists in multiple files, secret scanning will link to each file. The committer, a link to the commit SHA, and the commit date are also included for each location. Note that you should ignore the first two locations as they are part of the definition of the course. You can see the token you added in `credentials.yml` as the third location.
 
-![A screenshot of an alert with the secret location highlighted](/images/secret-location.png)
+  ![Screenshot of an alert with a secret location highlighted.](/images/secret-location.png)
 
-**Alert audit trail:** The alert audit trail contains any changes to the state of the alert as well as who made the change. In this example, the alert only has an "Opened" event. If the alert is closed, a new event will be added to the audit trail.
+- **Alert audit trail:** The alert audit trail contains any changes to the state of the alert as well as who made the change. In this example, the alert only has an "Opened" event so far. If the alert is closed, a new event will be added to the audit trail.
 
-![A screenshot of the bottom of an alert with the audit trail highlighted](/images/audit-trail.png)
+  ![Screenshot of the bottom of an alert with the audit trail highlighted.](/images/audit-trail.png)
 
 ### :keyboard: Activity 2.3: Close an alert
 
 When secret scanning finds a secret in your repository, the first thing you should do is disable that secret on the provider side. This prevents any further use of that credential. Once the secret has been disabled, the next step is to close the alert by marking it as "Revoked". In this activity, you will open an alert that has been validated as "Inactive" by secret scanning, then mark that alert as "Revoked" in secret scanning.
 
-1. From the list of secret scanning alerts (in your other tab), open the alert titled **GitHub Personal Access Token**.
-2. At the top of this alert, note that this alert is marked as "Secret inactive on github.com". Secret scanning has already validated this credential and found that it is disabled.
-   **NOTE:** If the token has not yet been validated, click the **Verify secret** button.
-3. Select the **Close as** dropdown
-4. Choose **Revoked**
-5. Enter a comment in the text box
-6. Choose **Close alert**
-   ![A screenshot of the GitHub Personal Access Token alert, the close alert options are activated and the option "revoked" is highlighted. The comment field has been filled in with "secret inactive"](/images/revoke-token.png)
-7. Note that the alert has changed state to "Closed" and that a new entry has been added to the audit trail at the bottom of the alert.
+1. In your other tab, return to the full list of secret scanning alerts, either using the **Secret scanning alerts** link at the top left of the alert or by using the **Security** tab as described above.
+2. From the list of secret scanning alerts, open the alert titled **GitHub Personal Access Token**.
+3. At the top of this alert, if the alert is marked as "Secret inactive on github.com" then secret scanning has already validated this credential and found that it is disabled. If the alert is still marked as "Possibly active secret", click the **Verify secret** button to validate it now.
+5. Now we know that this secret is no longer active, we are ready to close the alert. Select the **Close as** dropdown and choose **Revoked**.
+7. Enter a comment in the text box.
+8. Choose **Close alert**.
+   ![Screenshot of the GitHub Personal Access Token alert, the close alert options are activated and the option "revoked" is highlighted. The comment field has been filled in with "secret inactive".](/images/revoke-token.png)
+9. Note that the alert now has a state of "Closed" and that the audit trail at the bottom of the alert shows that you closed the alert as revoked.
 
 ## Step 3: Enable push protection
 
