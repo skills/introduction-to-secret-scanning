@@ -8,12 +8,12 @@ In this step, you will enable secret scanning on this repository. Once secret sc
 
 ### :keyboard: Activity 1.1: Enable secret scanning
 
+Secret scanning is enabled by default for all public repositories. If you're working in a public repository, you can go straight to "Activity 1.2: Commit a token." For private or internal repositories, enable secret scanning in the repository "Settings."
+
 1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
 2. In your newly created repository, select **Settings** from the top navigation bar.
 3. Under the **Security** section on the left side, select **Code security and analysis**.
 4. Scroll to the bottom of this page and select the **Enable** button next to "Secret scanning."
-
-TODO: Decide how to revise these steps because Secret scanning is now enabled by default for all Public repositories.
 
 > [!IMPORTANT]
 > When you enable secret scanning, you may receive an email notification about credentials in your repository. Don't worry! The tokens in this Skills repository are inactive. There is no risk to your environment.
