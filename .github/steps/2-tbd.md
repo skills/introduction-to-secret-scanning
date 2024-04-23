@@ -77,7 +77,7 @@ Push protection is enabled by default for all public repositories. If you're wor
 
 ### :keyboard: Activity 3.2: Attempt to push a secret
 
-Now that push protection for secret scanning is enabled, new secrets that secret scanning is confident in identifying will be blocked from being written to the repository. In this activity you will commit a new credential to the repository to experience the push protection.
+Now that push protection for secret scanning is enabled, new secrets that secret scanning has high confidence in identifying will be blocked from being written to the repository. In this activity you will commit a new credential to the repository to experience the push protection.
 
 1. In your other browswer tab, click **Code** in the top navigation bar.
 2. Open the `credentials.yml` file.
