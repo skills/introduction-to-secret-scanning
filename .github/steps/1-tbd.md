@@ -40,4 +40,4 @@ Now that you have secret scanning enabled in this repository, let's commit a new
     ```
 
 6. Click **Commit changes...** at the top right. The "Commit changes" window is displayed. Leave the defaults configured, and click **Commit changes** to commit directly to the `main` branch.
-7. Wait about 20 seconds, then refresh this page (the one you're following instructions from). An Actions workflow in the repository will run and automatically replace this contents of this `README` file with instructions for the next step.
+7. Wait about 20 seconds, then refresh this page (the one you're following instructions from). A GitHub Actions workflow in the repository will run and automatically replace this contents of this `README` file with instructions for the next step.
