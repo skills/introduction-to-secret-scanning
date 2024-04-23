@@ -12,7 +12,9 @@ Here's a recap of all the tasks you've accomplished in your repository:
 - Attempted to commit a secret, but had that commit stopped by push protection
 - Bypassed push protection
 
-It's important to note that secret scanning capabilities are available for free for all public repositories. Customers needing secret scanning for private repos should investigate [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security). In addition to the features you worked with here, Advanced Security also provides the following features:
+It's important to note that secret scanning capabilities are available for free for all public repositories. Customers who want to enable secret scanning on private repos should find out more about [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security) or [Set up a trial of GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/billing/managing-billing-for-github-advanced-security/setting-up-a-trial-of-github-advanced-security). 
+
+In addition to the features you worked with here, GitHub Advanced Security also provides the following features:
 
 -  Custom secret scanning patterns
 -  Non-partner and generic patterns including passwords, RSA and SSH keys, and database connection strings
