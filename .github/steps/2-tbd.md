@@ -33,7 +33,7 @@ Open the **Amazon AWS Access Key ID** alert and explore the information shown.
 
   ![Screenshot of the Amazon AWS Access Key ID alert with the currently open status highlighted.](/images/alert-status.png)
 
-- **Alert validity state:** Displayed only for tokens where secret scanning can contact the partner platform to check whether the token is currently active. This section shows the validity state: "Active", "Inactive", or "Possibly active", and how to remediate the exposed ssecret. A secret has the "Possibly active" state until the partner validates that it is either active or inactive.
+- **Alert validity state:** Displayed only for tokens where secret scanning can contact the partner platform to check whether the token is currently active. This section shows the validity state: "Active", "Inactive", or "Possibly active", and how to remediate the exposed secret. A secret has the "Possibly active" state until the partner validates that it is either active or inactive.
 
   ![Screenshot of the Amazon AWS Access Key ID alert with the validity state highlighted.](/images/alert-validity-state.png)
 
@@ -64,7 +64,7 @@ _Way to go! You reviewed and closed a secret scanning alert! :tada:_
 
 Up to now, you've learned how to identify secrets already stored in your repository. In this section, you will enable push protection on the repository to prevent new secrets from being written to the repository.
 
-**What is push protection**: When some tries to send code changes to GitHub (a push), secret scanning checks for high-confidence secrets (those identified with a low false-positive rate). Secret scanning lists any secrets it detects so the author can review the secrets and remove them or, if needed, allow those secrets to be pushed.
+**What is push protection**: When someone tries to send code changes to GitHub (a push), secret scanning checks for high-confidence secrets (those identified with a low false-positive rate). Secret scanning lists any secrets it detects so the author can review the secrets and remove them or, if needed, allow those secrets to be pushed.
 
 ### :keyboard: Activity 3.1: Enable push protection
 
