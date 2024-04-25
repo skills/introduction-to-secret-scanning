@@ -1,10 +1,3 @@
-<!--
-  <<< Author notes: Step 2 >>>
-  Start this step by acknowledging the previous step.
-  Define terms and link to docs.github.com.
-  TBD-step-2-notes.
--->
-
 ## Step 2: Review and close secret scanning alerts
 
 _You've enabled secret scanning and added a secret to test that the feature is working! :tada:_
@@ -95,6 +88,9 @@ Now that push protection for secret scanning is enabled, new secrets that secret
 6.  Select **Commit changes...**.
 7.  Select **Commit changes**.
 8.  Instead of committing the updated file to your repository, a push protection alert warns you that your changes include a GitHub Personal Access Token.
+
+> [!TIP]
+> When you work in a local environment or a GitHub Codespace, secret scanning cannot block your commit. Instead, your push to GitHub is blocked.  In this case, if the secret is active then you will need to remove the secret from your branch and commit history, see [Resolving a blocked push on the command line](https://docs.github.com/en/code-security/secret-scanning/pushing-a-branch-blocked-by-push-protection#resolving-a-blocked-push-on-the-command-line).
 
 ### :keyboard: Activity 3.3: Bypass push protection
 
