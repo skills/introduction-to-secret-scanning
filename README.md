@@ -2,7 +2,7 @@
 
 # Introduction to secret scanning
 
-_GitHub scans repositories for known types of secrets, such as passwords and authentication tokens, to prevent fraudulent use of secrets that were committed accidentally. In this GitHub Skills course you will learn how to enable secret scanning to identify secrets and prevent them from being committed to your repository._
+_GitHub scans repositories for known types of secrets, such as API keys and authentication tokens, to prevent fraudulent use of secrets that were committed accidentally. In this GitHub Skills course you will learn how to enable secret scanning to identify secrets and prevent them from being committed to your repository._
 
 </header>
 
