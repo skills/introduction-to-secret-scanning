@@ -12,7 +12,7 @@ Secret scanning is enabled by default for all new public repositories. If you're
 
 1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
 2. In your newly created repository, select **Settings** from the top navigation bar.
-3. Under the **Security** section on the left side, select **Code security and analysis**.
+3. Under the **Security** section on the left side, select **Code security**.
 4. Scroll to the bottom of this page and select the **Enable** button next to "Secret scanning."
 
 > [!IMPORTANT]
