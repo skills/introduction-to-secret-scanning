@@ -1,0 +1,189 @@
+name: Step 3 # Enable push protection
+
+on:
+  push:
+    paths:
+      - credentials.yml
+
+permissions:
+  contents: read
+  actions: write
+  issues: write
+
+env:
+  REVIEW_FILE: ".github/steps/x-review.md"
+
+jobs:
+  find_exercise:
+    name: Find Exercise Issue
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.3.0
+
+  check_step_work:
+    name: Check if push protection is enabled
+    needs: [find_exercise]
+    runs-on: ubuntu-latest
+    env:
+      ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get response templates
+        uses: actions/checkout@v4
+        with:
+          repository: skills/response-templates
+          path: skills-response-templates
+
+      - name: Update comment - checking work
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file skills-response-templates/step-feedback/checking-work.md \
+            --edit-last
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # START: Check practical exercise
+
+      - name: Check if secret push protection is enabled
+        id: check-secret-push-protection-enabled
+        uses: skills/exercise-toolkit/.github/workflows/grading/check-repo-setting@cwb
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          check-name: "Secret Protection Enabled"
+          setting-name: "security_and_analysis.secret_scanning_push_protection.status"
+          setting-expected-value: "enabled"
+          pass-message: "Verified"
+          fail-message: "Secret push protection should be enabled now. Please check your repository settings."
+     
+      - name: Check credentials file
+        id: check-credentials-file
+        uses: actions/github-script@v7
+        env:
+          FILE: credentials.yml
+          REQUIRED_WORDS: "github_pat, 11A4YXR6Y0v36CYFkuT5I1_ZRWX91c8k0waSN6x7AiVJ6zZ9ZHUQXBblBqFQpKd23V6CL7MWMPopnmBxzn"
+        with:
+          result-encoding: string
+          script: |
+            const fs = require('fs');
+
+            const test = {
+              "name": "Update credentials.yml",
+              "passed": false,
+              "message": ""
+            }
+
+            // Check if the file exists
+            const file = process.env.FILE;
+            if (!fs.existsSync(file)) {
+              test.message = "File not found. Please try again.";
+              return JSON.stringify(test);
+            }
+
+            // Read the file content
+            const fileContent = fs.readFileSync('credentials.yml', 'utf8');
+
+            // Load the required words and trim
+            const requiredWords = process.env.REQUIRED_WORDS.split(',').map(word => word.trim());
+
+            // Provide feedback
+            test.passed = true;
+            test.message = "Verified";
+            for (const word of requiredWords) {
+              if (!fileContent.includes(word)) {
+                test.passed = false;
+                test.message = `File was not updated as expected. Please try again.`;
+                break;
+              }
+            }
+
+            // Return the test results object as a JSON string
+            console.log('Test results:', JSON.stringify(test, null, 2));
+            return JSON.stringify(test);
+
+      - name: Check all results
+        id: check-combined-results
+        uses: skills/exercise-toolkit/.github/workflows/grading/check-all-results@cwb
+        env:
+          check-1: ${{ steps.check-secret-push-protection-enabled.outputs.result }}
+          check-2: ${{ steps.check-credentials-file.outputs.result }}
+
+      - name: Build message - step results
+        id: build-message-step-results
+        uses: skills/action-text-variables@v1
+        with:
+          template-file: skills-response-templates/step-feedback/step-results.md
+          template-vars: '{
+              "step_number": 1,
+              "passed": ${{ steps.check-combined-results.outputs.result }},
+              "results_table": [
+                  ${{ steps.check-secret-push-protection-enabled.outputs.result }},
+                  ${{ steps.check-credentials-file.outputs.result }}
+                ],
+              "tips": [
+              "???",
+              "???"
+              ]
+            }'
+  
+      - name: Create comment - step results
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body "$COMMENT_BODY" \
+            --edit-last
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMENT_BODY: ${{ steps.build-message-step-results.outputs.updated-text }}
+
+      - name: Fail job if not all checks passed
+        if: steps.check-combined-results.outputs.result == 'false'
+        run: exit 1
+
+      # END: Check practical exercise
+
+      - name: Create comment - step results
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body "Excellent! 🛡️ Push protection is now enabled. Your repository is ready to block any accidental commits containing secrets."
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create comment - step finished - final review next
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file skills-response-templates/step-feedback/lesson-review.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  post_review_content:
+    name: Post review content
+    needs: [find_exercise, check_step_work]
+    runs-on: ubuntu-latest
+    env:
+      ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create comment - add step content
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file "$REVIEW_FILE"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Enable next workflow
+        run: |
+          gh workflow disable "Step 3" || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  finish_exercise:
+    if: false
+    name: Finish Exercise
+    needs: [find_exercise, post_review_content]
+    uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.3.0
+    with:
+      issue-url: ${{ needs.find_exercise.outputs.issue-url }}
