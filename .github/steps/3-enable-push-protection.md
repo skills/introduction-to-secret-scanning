@@ -48,4 +48,4 @@ Now that you're aware of the secret in your changes, you should remove the secre
 3. A notification banner reports that you can now commit the secret.
 4. Select **Commit changes...** again.
 5. Select **Commit changes**.
-6. Wait about 20 seconds, then refresh this page (the one you're following instructions from). A GitHub Actions workflow in the repository will run and automatically replace this contents of this `README` file with instructions for the next step.
+6. With the file committed, Mona should be busy checking your work. After reviewing, she'll provide feedback and the final review. Nice work! You are all done! 🎉
