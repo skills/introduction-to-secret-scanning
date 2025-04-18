@@ -74,25 +74,25 @@ jobs:
           script: |
             // Result object
             const test = {
-              "name": "Review Alerts",
+              "name": "Alerts",
               "passed": false,
               "message": ""
             }
 
             // Query the repo for open alerts
-            const { data: alerts } = await github.rest.secretScanning.listAlertsForRepo({
+            const { data: closed_alerts } = await github.rest.secretScanning.listAlertsForRepo({
               owner: process.env.OWNER,
               repo: process.env.REPO,
-              state: 'open'
+              state: 'resolved'
             });
 
             // Check if any alerts are present
-            if(alerts.length == 2) {
+            if(closed_alerts.length > 0) {
               test.passed = true;
-              test.message = "No active alerts.";
+              test.message = "Practice alert resolved";
             } else {
               test.passed = false;
-              test.message = `Please resolve the ${ alerts.length } active alerts.`;
+              test.message = `Please try resolving an alert.`;
             }
 
             // Return the test results object as a JSON string
@@ -101,30 +101,35 @@ jobs:
 
       - name: Check all results
         id: check-combined-results
-        uses: skills/exercise-toolkit/.github/workflows/grading/check-all-results@cwb
-        env:
-          check-1: ${{ steps.check-open-alerts.outputs.result }}
+        uses: actions/github-script@v7
+        with:
+          result-encoding: string
+          script: |
+            // Load grading checks
+            const check1 = JSON.parse(process.env.check1)
 
-          # ${{ steps.check-secret-scanning-enabled.outputs.result }},
-          # ${{ steps.check-secret-push-protection-disabled.outputs.result }},
-          # ${{ steps.check-credentials-file.outputs.result }}
+            // Show the loaded checks
+            console.log("All Checks")
+            console.log(check1.name, check1.passed)
+
+            // Return true if all checks passed
+            return (check1.passed)
+        env:
+          check1: ${{ steps.check-open-alerts.outputs.result }}
 
       - name: Build message - step results
         id: build-message-step-results
         uses: skills/action-text-variables@v1
         with:
           template-file: skills-response-templates/step-feedback/step-results.md
-          template-vars: '{
-            "step_number": 2,
-            "passed": ${{ steps.check-combined-results.outputs.result }},
-            "results_table": [
-              ${{ steps.check-open-alerts.outputs.result }}
-            ],
-            "tips": [
-            "???",
-            "???"
-            ]
-            }'
+          template-vars: >
+            {
+              "step_number": 1,
+              "passed": "${{ steps.check-combined-results.outputs.result }}",
+              "results_table": [
+                ${{ steps.check-open-alerts.outputs.result }}
+              ]
+            }
 
       - name: Create comment - step results
         run: |
