@@ -1,0 +1,119 @@
+name: "Check Repository Setting"
+description: "Check a repository setting and return a useful message"
+
+inputs:
+  # Required inputs for grading workflows
+  check-name:
+    description: "The name of the check"
+    required: true
+  pass-message:
+    description: "The message to return if the check passes"
+    required: true
+  fail-message:
+    description: "The message to return if the check fails"
+    required: true
+
+  # Optional inputs for grading workflows
+  debug:
+    description: "Show more log messages to help debugging"
+    required: false
+    default: "false"
+
+  # Required inputs for this grading workflow
+  setting-name:
+    description: "The full path to the repository setting to check"
+    required: true
+  setting-expected-value:
+    description: "The expected value of the repository setting"
+    required: true
+
+  # Optional inputs for this grading workflow
+  owner:
+    description: "The owner of the repository"
+    required: false
+    default: "${{ github.event.repository.owner.login }}"
+  repo-name:
+    description: "The name of the repository"
+    required: false
+    default: "${{ github.event.repository.name }}"
+
+outputs:
+  result:
+    description: "JSON object containing the test result"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Check repository setting
+      if: true
+      uses: actions/github-script@v7
+      env:
+        # Required inputs
+        CHECK_NAME: ${{ inputs.check-name }}
+        PASS_MESSAGE: ${{ inputs.pass-message }}
+        FAIL_MESSAGE: ${{ inputs.fail-message }}
+        SETTING_NAME: ${{ inputs.setting-name }}
+        EXPECTED_VALUE: ${{ inputs.setting-expected-value }}
+        # Optional inputs
+        DEBUG: ${{ inputs.debug }}
+        OWNER: ${{ inputs.owner }}
+        REPO_NAME: ${{ inputs.repo-name }}
+      with:
+        result-encoding: string
+        script: |
+          // Check for debug mode
+          const DEBUG = process.env.DEBUG === 'true';
+          if (DEBUG) console.log('Debug mode: enabled');
+
+          // Result object
+          const test = {
+            "name": process.env.CHECK_NAME,
+            "passed": false,
+            "message": ""
+          }
+
+          try {
+            // Query the repo settings
+            const { data: repo } = await github.rest.repos.get({
+              owner: '${{ inputs.owner }}',
+              repo: '${{ inputs.repo-name }}'
+            });
+
+            
+            // Split the setting path
+            const settingPath = process.env.SETTING_NAME.split('.');
+            
+            // Traverse the object to get the setting value
+            let currentValue = repo;
+            for (const key of settingPath) {
+              currentValue = currentValue[key];
+              if (currentValue === undefined) {
+                // Show full repo data
+                if (DEBUG) {
+                  console.debug('Repository data:', JSON.stringify(repo, null, 2));
+                }
+                // Show error message
+                throw new Error(`Setting not found: ${process.env.REPO_SETTING}`);
+              }
+            }
+
+            // Show setting value
+            if (DEBUG) console.log('Setting value:', currentValue);
+
+            // Check the value
+            if (currentValue === process.env.EXPECTED_VALUE) {
+              test.passed = true;
+              test.message = process.env.PASS_MESSAGE;
+            } else {
+              test.passed = false;
+              test.message = process.env.FAIL_MESSAGE;
+            }
+          } catch (error) {
+            test.passed = false;
+            test.message = `Error checking setting: ${error.message}`;
+            console.error(error); 
+          }
+
+          // Return the test results object as a JSON string
+          console.log('Test results:', JSON.stringify(test, null, 2));
+          return JSON.stringify(test);

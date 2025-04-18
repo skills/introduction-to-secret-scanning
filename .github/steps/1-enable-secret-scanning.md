@@ -44,4 +44,4 @@ Now that you have secret scanning enabled in this repository, let's commit a new
    ```
 
 6. Click **Commit changes...** at the top right. The "Commit changes" window is displayed. Leave the defaults configured, and click **Commit changes** to commit directly to the `main` branch.
-7. Now that the file is committed, Mona should be busy checking your work. After reviewing, she'll provide feedback and the next learning step.
+7. With the file committed, Mona should be busy checking your work. After reviewing, she'll provide feedback and the next learning step.

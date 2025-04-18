@@ -36,8 +36,8 @@ Now that push protection for secret scanning is enabled, new secrets that secret
 7. Select **Commit changes**.
 8. Instead of committing the updated file to your repository, a push protection alert warns you that your changes include a GitHub Personal Access Token.
 
-> [!TIP]
-> When you work in a local environment or a GitHub Codespace, secret scanning cannot block your commit. Instead, your push to GitHub is blocked. In this case, if the secret is active then you will need to remove the secret from your branch and commit history, see [Resolving a blocked push on the command line](https://docs.github.com/en/code-security/secret-scanning/pushing-a-branch-blocked-by-push-protection#resolving-a-blocked-push-on-the-command-line).
+> [!IMPORTANT]
+> Secret Push protection only prevents **pushing** to GitHub, not committing locally. As such, if you work in a local environment or GitHub Codespace, be careful with your local commits. If the compromised commit is several commits deep, you will need to remove the secret from your branch and commit history. See [resolving a blocked push on the command line](https://docs.github.com/en/code-security/secret-scanning/pushing-a-branch-blocked-by-push-protection#resolving-a-blocked-push-on-the-command-line).
 
 ### :keyboard: Activity: Bypass push protection
 

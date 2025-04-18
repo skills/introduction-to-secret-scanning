@@ -47,85 +47,62 @@ jobs:
 
       - name: Check if secret push protection is enabled
         id: check-secret-push-protection-enabled
-        uses: skills/exercise-toolkit/.github/workflows/grading/check-repo-setting@cwb
+        uses: ./.github/workflows/grading/check-repo-setting
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          check-name: "Secret Protection Enabled"
+          check-name: "Secret Push Protection Enabled"
           setting-name: "security_and_analysis.secret_scanning_push_protection.status"
           setting-expected-value: "enabled"
-          pass-message: "Verified"
+          pass-message: "Verified enabled"
           fail-message: "Secret push protection should be enabled now. Please check your repository settings."
-     
-      - name: Check credentials file
+          debug: false
+
+      - name: Check content of credentials file
         id: check-credentials-file
+        uses: ./.github/workflows/grading/check-file-content
+        with:
+          file: credentials.yml
+          required-words: "github_pat, 11A4YXR6Y0v36CYFkuT5I1_ZRWX91c8k0waSN6x7AiVJ6zZ9ZHUQXBblBqFQpKd23V6CL7MWMPopnmBxzn"
+          pass-message: "Updates verified"
+          fail-message: "File was not updated as expected. Please try again."
+          debug: false
+        
+      - name: Check all results
+        id: check-combined-results
         uses: actions/github-script@v7
-        env:
-          FILE: credentials.yml
-          REQUIRED_WORDS: "github_pat, 11A4YXR6Y0v36CYFkuT5I1_ZRWX91c8k0waSN6x7AiVJ6zZ9ZHUQXBblBqFQpKd23V6CL7MWMPopnmBxzn"
         with:
           result-encoding: string
           script: |
-            const fs = require('fs');
+            // Load grading checks
+            const check1 = JSON.parse(process.env.check1)
+            const check2 = JSON.parse(process.env.check2)
 
-            const test = {
-              "name": "Update credentials.yml",
-              "passed": false,
-              "message": ""
-            }
+            // Show the loaded checks
+            console.log("All Checks")
+            console.log(check1.name, check1.passed)
+            console.log(check2.name, check2.passed)
 
-            // Check if the file exists
-            const file = process.env.FILE;
-            if (!fs.existsSync(file)) {
-              test.message = "File not found. Please try again.";
-              return JSON.stringify(test);
-            }
-
-            // Read the file content
-            const fileContent = fs.readFileSync('credentials.yml', 'utf8');
-
-            // Load the required words and trim
-            const requiredWords = process.env.REQUIRED_WORDS.split(',').map(word => word.trim());
-
-            // Provide feedback
-            test.passed = true;
-            test.message = "Verified";
-            for (const word of requiredWords) {
-              if (!fileContent.includes(word)) {
-                test.passed = false;
-                test.message = `File was not updated as expected. Please try again.`;
-                break;
-              }
-            }
-
-            // Return the test results object as a JSON string
-            console.log('Test results:', JSON.stringify(test, null, 2));
-            return JSON.stringify(test);
-
-      - name: Check all results
-        id: check-combined-results
-        uses: skills/exercise-toolkit/.github/workflows/grading/check-all-results@cwb
+            // Return true if all checks passed
+            return (check1.passed && check2.passed)
         env:
-          check-1: ${{ steps.check-secret-push-protection-enabled.outputs.result }}
-          check-2: ${{ steps.check-credentials-file.outputs.result }}
+          check1: ${{ steps.check-secret-push-protection-enabled.outputs.result }}
+          check2: ${{ steps.check-credentials-file.outputs.result }}
 
       - name: Build message - step results
         id: build-message-step-results
         uses: skills/action-text-variables@v1
         with:
           template-file: skills-response-templates/step-feedback/step-results.md
-          template-vars: '{
+          template-vars: >
+            {
               "step_number": 1,
-              "passed": ${{ steps.check-combined-results.outputs.result }},
+              "passed": "${{ steps.check-combined-results.outputs.result }}",
               "results_table": [
-                  ${{ steps.check-secret-push-protection-enabled.outputs.result }},
-                  ${{ steps.check-credentials-file.outputs.result }}
-                ],
-              "tips": [
-              "???",
-              "???"
+                ${{ steps.check-secret-push-protection-enabled.outputs.result }},
+                ${{ steps.check-credentials-file.outputs.result }}
               ]
-            }'
+            }
   
       - name: Create comment - step results
         run: |

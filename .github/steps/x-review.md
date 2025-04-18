@@ -1,4 +1,4 @@
-## Finish 🏆
+## Review 📖
 
 _Congratulations friend, you've completed this course!_
 
