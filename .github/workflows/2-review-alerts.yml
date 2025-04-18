@@ -38,7 +38,7 @@ jobs:
 
   check_step_work:
     name: Check for secret scanning alert
-    needs: [find_exercise]
+    needs: [find_exercise, required_issue_comment_keywords]
     runs-on: ubuntu-latest
     env:
       ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
