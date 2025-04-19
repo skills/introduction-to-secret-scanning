@@ -57,5 +57,5 @@ In this activity, you will open an alert that has been validated as "Inactive" b
 8. With at least one of our alerts resolved, let's ask Mona to check our progress. Add a comment asking for a review.
 
    ```txt
-   Hello @professortocat, can you please check my repo for alerts?
+   Hello @professortocat, I've resolved some alerts. What's next?
    ```
