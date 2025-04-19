@@ -21,7 +21,7 @@ jobs:
     uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.3.0
     with:
       exercise-title: "Introduction to Secret Scanning"
-      intro-message: "Welcome to Secret Scanning! 🔍 In this exercise, you'll learn how to identify and protect sensitive information in your repositories. Let's work together to keep your code secure! 🛡️"
+      intro-message: "In this exercise, you'll learn how to identify and protect sensitive information in your repositories. 🔍 Let's work together to keep your code secure! 🛡️"
 
   post_next_step_content:
     name: Post next step content
