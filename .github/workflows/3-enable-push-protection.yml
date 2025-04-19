@@ -6,7 +6,7 @@ on:
       - credentials.yml
 
 permissions:
-  contents: read
+  contents: write
   actions: write
   issues: write
 
@@ -89,7 +89,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   finish_exercise:
-    if: false
     name: Finish Exercise
     needs: [find_exercise, post_review_content]
     uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.3.0
