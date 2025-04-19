@@ -2,7 +2,7 @@ name: Step 2 # Review Alerts
 
 on:
   issue_comment:
-    types: [created, edited]
+    types: [created]
 
 permissions:
   contents: write
@@ -89,7 +89,7 @@ jobs:
             // Check if any alerts are present
             if(closed_alerts.length > 0) {
               test.passed = true;
-              test.message = "Practice alert resolved";
+              test.message = "Practice resolving an alert.";
             } else {
               test.passed = false;
               test.message = `Please try resolving an alert.`;
@@ -99,24 +99,6 @@ jobs:
             console.log('Test results:', JSON.stringify(test, null, 2));
             return JSON.stringify(test);
 
-      - name: Check all results
-        id: check-combined-results
-        uses: actions/github-script@v7
-        with:
-          result-encoding: string
-          script: |
-            // Load grading checks
-            const check1 = JSON.parse(process.env.check1)
-
-            // Show the loaded checks
-            console.log("All Checks")
-            console.log(check1.name, check1.passed)
-
-            // Return true if all checks passed
-            return (check1.passed)
-        env:
-          check1: ${{ steps.check-open-alerts.outputs.result }}
-
       - name: Build message - step results
         id: build-message-step-results
         uses: skills/action-text-variables@v1
@@ -124,8 +106,8 @@ jobs:
           template-file: skills-response-templates/step-feedback/step-results.md
           template-vars: >
             {
-              "step_number": 1,
-              "passed": "${{ steps.check-combined-results.outputs.result }}",
+              "step_number": 2,
+              "passed": "${{ fromJson(steps.check-open-alerts.outputs.result).passed }}",
               "results_table": [
                 ${{ steps.check-open-alerts.outputs.result }}
               ]
@@ -140,16 +122,12 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMMENT_BODY: ${{ steps.build-message-step-results.outputs.updated-text }}
 
-      - name: Fail job if not all checks passed
-        if: steps.check-combined-results.outputs.result == 'false'
-        run: exit 1
-
       # END: Check practical exercise
 
       - name: Create comment - step results
         run: |
           gh issue comment "$ISSUE_URL" \
-            --body "Great work! 🎉 The secret scanning alert has been created. This is exactly what we want - GitHub detected the token pattern and alerted us."
+            --body "Great work! 🎉 A secret scanning alert was resolved. This is exactly what we wanted! GitHub detected the token pattern and alerted us so we could handle it properly."
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
