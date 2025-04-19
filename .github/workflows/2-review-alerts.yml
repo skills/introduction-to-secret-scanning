@@ -7,7 +7,6 @@ on:
 permissions:
   contents: write
   issues: write
-  security-events: read
 
 env:
   # Keywords required in the issue comment to let this workflow run
@@ -37,7 +36,7 @@ jobs:
     uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.3.0
 
   check_step_work:
-    name: Check for secret scanning alert
+    name: Check step work
     needs: [find_exercise, required_issue_comment_keywords]
     runs-on: ubuntu-latest
     env:
@@ -63,71 +62,15 @@ jobs:
 
       # START: Check practical exercise
 
-      - name: Check for open alerts
-        id: check-open-alerts
-        uses: actions/github-script@v7
-        env:
-          OWNER: ${{ github.event.repository.owner.login }}
-          REPO: ${{ github.event.repository.name }}
-        with:
-          result-encoding: string
-          script: |
-            // Result object
-            const test = {
-              "name": "Alerts",
-              "passed": false,
-              "message": ""
-            }
-
-            // Query the repo for open alerts
-            const { data: closed_alerts } = await github.rest.secretScanning.listAlertsForRepo({
-              owner: process.env.OWNER,
-              repo: process.env.REPO,
-              state: 'resolved'
-            });
-
-            // Check if any alerts are present
-            if(closed_alerts.length > 0) {
-              test.passed = true;
-              test.message = "Practice resolving an alert.";
-            } else {
-              test.passed = false;
-              test.message = `Please try resolving an alert.`;
-            }
-
-            // Return the test results object as a JSON string
-            console.log('Test results:', JSON.stringify(test, null, 2));
-            return JSON.stringify(test);
-
-      - name: Build message - step results
-        id: build-message-step-results
-        uses: skills/action-text-variables@v1
-        with:
-          template-file: skills-response-templates/step-feedback/step-results.md
-          template-vars: >
-            {
-              "step_number": 2,
-              "passed": "${{ fromJson(steps.check-open-alerts.outputs.result).passed }}",
-              "results_table": [
-                ${{ steps.check-open-alerts.outputs.result }}
-              ]
-            }
-
-      - name: Create comment - step results
-        run: |
-          gh issue comment "$ISSUE_URL" \
-            --body "$COMMENT_BODY" \
-            --edit-last
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COMMENT_BODY: ${{ steps.build-message-step-results.outputs.updated-text }}
-
+      # The workflow GITHUB_TOKEN doesn't allow us to verify if any alerts were closed.
+      # We will trust the learner to ask to proceed.
+      
       # END: Check practical exercise
 
       - name: Create comment - step results
         run: |
           gh issue comment "$ISSUE_URL" \
-            --body "Great work! 🎉 A secret scanning alert was resolved. This is exactly what we wanted! GitHub detected the token pattern and alerted us so we could handle it properly."
+            --body "Great work reviewing some open alerts! 🎉 This is exactly what we wanted! GitHub detected the token pattern and alerted us so we could handle it properly."
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
