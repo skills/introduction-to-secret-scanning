@@ -54,7 +54,7 @@ In this activity, you will open an alert that has been validated as "Inactive" b
 6. Choose **Close alert**.
    ![Screenshot of the GitHub Personal Access Token alert, the close alert options are activated and the option "revoked" is highlighted. The comment field has been filled in with "secret inactive".](https://github.com/user-attachments/assets/380ed9d1-4b17-41a6-9a96-1fc28dbb91bd)
 7. Note that the alert now has a state of "Closed" and that the audit trail at the bottom of the alert shows that you closed the alert as revoked.
-8. With all our alerts resolved, let's ask Mona to check our progress. Add a comment asking for a review.
+8. With at least one of our alerts resolved, let's ask Mona to check our progress. Add a comment asking for a review.
 
    ```txt
    Hello @professortocat, can you please check my repo for alerts?
