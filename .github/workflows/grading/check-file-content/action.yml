@@ -1,5 +1,5 @@
-name: "Check Repository Setting"
-description: "Check a repository setting and return a useful message"
+name: "Check File Content"
+description: "Check a file for expected words."
 
 inputs:
   # Required inputs for grading workflows
@@ -30,12 +30,13 @@ inputs:
 outputs:
   result:
     description: "A stringified JSON object containing the test result summary."
+    value: ${{ steps.check-file-content.outputs.result }}
 
 runs:
   using: "composite"
   steps:
-    - name: Check repository setting
-      if: true
+    - name: Check file content
+      id: check-file-content
       uses: actions/github-script@v7
       env:
         # Required inputs
