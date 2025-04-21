@@ -24,7 +24,6 @@ In addition to the features you worked with here, GitHub Advanced Security also 
 
 ### What's next?
 
-- [We'd love to hear what you thought of this course](TBD-feedback-link).
-- [Take another Skills Course](https://github.com/skills).
+- [Take another Skills Exercise](https://skills.github.com).
 - [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
 - To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).

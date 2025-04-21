@@ -20,7 +20,7 @@ The GitHub Docs provides a list of [all supported patterns](https://docs.github.
 1. Open a new browser tab and navigate to your newly made repository (your copy of this exercise). Then, work on the steps in your second tab while you read the instructions in this tab.
 2. In header of your repository, navigate to the **Settings** tab.
 3. In the left navigation, under the **Security** section, select **Code Security**.
-4. Scroll down past the **Code Scanning** and **Dependabot** sections until you fine the **Secret Protection** section.
+4. Scroll down past the **Code Scanning** and **Dependabot** sections until you find the **Secret Protection** section.
    > 💡 **Tip:** We also have exercise to learn those!
 5. Adjust the default configuration to match the below.
 
@@ -55,4 +55,4 @@ Now let's commit a new token to see how it works. Don't worry, this is an inacti
 
    > ❗️ **Important:** Committing to your default branch is not usually a recommended practice. We only do this to simplify the exercise.
 
-6. With our credentials file updated, Mona should be busy preparing the next step. You should also receive another alert email.
+6. With our credentials file updated, Mona should be busy preparing the next step.

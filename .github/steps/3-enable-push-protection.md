@@ -11,12 +11,10 @@ When someone tries to send code changes to GitHub (a push), secret scanning chec
 > [!IMPORTANT]
 > We disabled push protection in our first step for learning practice. It is normally enabled by default for all public repositories.
 
-1. In the header of your repository, click the **Security** tab.
-2. In the left navigation, select the **Secret scanning** option.
-3. In the left navigation, under the **Security** section, select **Code Security**.
-4. Scroll to the bottom of the page and select **Enable** next to "Push Protection."
-5. Scroll down past the **Code Scanning** and **Dependabot** sections until you fine the **Secret Protection** section.
-6. Adjust the default configuration to match the below.
+1. In the header of your repository, click the **Settings** tab.
+2. In the left navigation, under the **Security** section, select **Code Security**.
+3. Scroll down past the **Code Scanning** and **Dependabot** sections until you find the **Secret Protection** section.
+4. Adjust the default configuration to match the below.
 
    - **Secret Protection:** `enabled`
    - **Push Protection:** `enabled`
@@ -57,4 +55,4 @@ In some cases, you may write code that looks similar to a secret and a commit is
 
 3. In the top right, use the **Commit changes...** button to commit directly to the `main` branch.
 
-4. With the file updated, Mona should be busy checking your work. After reviewing, she'll provide feedback and the final review. Nice work! You are all done! 🎉
+4. With the file updated, Mona should be busy checking your work. After checking, she'll provide feedback and the final review. Nice work! You are all done! 🎉

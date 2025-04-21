@@ -34,9 +34,9 @@ Some common services provide options to verify the validity of a secret. In thes
 
 1. Return back to the full list of secret scanning alerts.
 
-2. In the list open alerts, select the `GitHub Personal Access Token` alert.
+2. In the list of open alerts, select the `GitHub Personal Access Token` alert.
 
-3. Near the top, click the **Verify secret** button to perform a check. If the button is not visible, GitHub likely already did the validation.
+3. Near the top, click the **Verify secret** button to perform a check. If the button is not visible, GitHub likely already performed a verification.
    <img width="400" alt="image" src="https://github.com/user-attachments/assets/9a1fc239-c4b3-43f3-b69b-1abcff1ad6cf" />
 
 4. Scroll down to the end to view the **Audit Log** to see when GitHub last verified this exposed secret.
@@ -47,14 +47,14 @@ Some common services provide options to verify the validity of a secret. In thes
 
 1. When secret protection finds a secret in your repository, the first thing you should do is **disable that secret with the provider**. You should assume it has been exposed.
 
-2. With the secret now inactive, we can update the status of our alert. In the top right, select the **Close as** dropdown. Choose **Revoked**.
+2. With the secret now inactive, we can update the status of our alert. In the top right, select the **Close as** dropdown.
 
    > 🚨 **Caution:** Do **NOT** close an open alert without performing remediation steps. This simply hides the problem and provides a false sense of security. It might even trigger additional alerts with your cybersecurity department. 🤦
 
-3. Enter a useful description of your remediation steps in the comment box, so the audit log can provide critical information later if needed. Then choose **Close alert**.
+3. Choose the `Revoked` option and enter a useful description of your remediation steps in the comment box. This is important so the audit log can later provide critical information if an investigation is required. Then choose **Close alert**.
    ![Screenshot of the GitHub Personal Access Token alert, the close alert options are activated and the option "revoked" is highlighted. The comment field has been filled in with "secret inactive".](https://github.com/user-attachments/assets/380ed9d1-4b17-41a6-9a96-1fc28dbb91bd)
 
-4. Now the status display "Closed" and that the audit trail includes our explanation.
+4. The alert status now displays `Closed` and the audit trail includes our explanation.
 
    <img width="400" alt="image" src="https://github.com/user-attachments/assets/9a1c1bdb-eba7-4ec1-866a-a6ce6df37d8d" />
 

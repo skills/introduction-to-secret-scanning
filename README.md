@@ -1,16 +1,12 @@
-<header>
+# Introduction to secret protection
 
-# Introduction to secret scanning
-
-_GitHub scans repositories for known types of secrets, such as API keys and authentication tokens, to prevent fraudulent use of secrets that were committed accidentally. In this GitHub Skills course you will learn how to enable secret scanning to identify secrets and prevent them from being committed to your repository._
-
-</header>
+_GitHub scans repositories for known types of secrets, such as API keys and authentication tokens, to prevent fraudulent use of secrets that were committed accidentally. In this GitHub Skills course you will learn how to enable secret protection to identify secrets and prevent them from being committed to your repository._
 
 ## Welcome
 
-Plain-text credentials accidentally stored in repositories on GitHub are a common target for attackers. In fact, we find well over a million tokens stored on the GitHub platform each year. Secret scanning is a powerful tool which allows teams to identify these plain-text credentials, remove them, and create rules to prevent them from being written to GitHub in the first place.
+Plain-text credentials accidentally stored in repositories on GitHub are a common target for attackers. In fact, we find well over a million tokens stored on the GitHub platform each year. Secret protection is a powerful tool which allows teams to identify these plain-text credentials, remove them, and create rules to prevent them from being written to GitHub in the first place.
 
-Secret scanning is available **for free for public repositories** on all plans. Enterprises that need secret scanning capabilities for private repositories should review [GitHub Advanced Security](https://github.com/security/advanced-security). Not only does it include secret scanning, it also provides advanced static analysis, composition, analysis, and enterprise tools to manage your entire AppSec pipeline and reduce your risk profile.
+Secret protection is available **for free for public repositories** on all plans. Enterprises that need secret protection capabilities for private repositories should review [GitHub Advanced Security](https://github.com/security/advanced-security). Not only does it include secret protection, it also provides advanced static analysis, composition, analysis, and enterprise tools to manage your entire AppSec pipeline and reduce your risk profile.
 
 - **Who is this for**: Developers, DevOps Engineers, security teams.
 - **What you'll learn**: How to identify plain-text credentials in your repository and how to prevent them from being exposed on GitHub in future pushes.
@@ -19,7 +15,7 @@ Secret scanning is available **for free for public repositories** on all plans. 
 
 In this course, you will:
 
-1. Enable secret scanning
+1. Enable secret protection
 2. Identify secrets stored in your repository
 3. Enable push protection
 4. Stop secrets from being written to your repository

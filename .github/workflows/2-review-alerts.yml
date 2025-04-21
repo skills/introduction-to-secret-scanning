@@ -56,8 +56,7 @@ jobs:
       - name: Update comment - checking work
         run: |
           gh issue comment "$ISSUE_URL" \
-            --body-file skills-response-templates/step-feedback/checking-work.md \
-            --edit-last
+            --body-file skills-response-templates/step-feedback/checking-work.md
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
