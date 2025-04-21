@@ -47,12 +47,12 @@ jobs:
 
       - name: Build comment - add step content
         id: build-comment
-        uses: skills/action-text-variables@v1
+        uses: skills/action-text-variables@v2
         with:
           template-file: ${{ env.STEP_1_FILE }}
           template-vars: |
-            login=${{ github.actor }}
-            full_repo_name=${{ github.repository }}
+            login: ${{ github.actor }}
+            full_repo_name: ${{ github.repository }}
 
       - name: Create comment - add step content
         run: |
