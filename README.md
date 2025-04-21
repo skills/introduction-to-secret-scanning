@@ -8,9 +8,9 @@ _GitHub scans repositories for known types of secrets, such as API keys and auth
 
 ## Welcome
 
-Plain-text credentials accidentally stored in repositories on GitHub are a common target for attackers.  In fact, we find well over a million tokens stored on the GitHub platform each year. Secret scanning is a powerful tool which allows teams to identify these plain-text credentials, remove them, and create rules to prevent them from being written to GitHub in the first place.
+Plain-text credentials accidentally stored in repositories on GitHub are a common target for attackers. In fact, we find well over a million tokens stored on the GitHub platform each year. Secret scanning is a powerful tool which allows teams to identify these plain-text credentials, remove them, and create rules to prevent them from being written to GitHub in the first place.
 
-Secret scanning is available for free for public repositories on all plans. Enterprises that need secret scanning capabilities for private repositories should review [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security). GitHub Advanced Security allows you to use secret scanning and other security features on private and internal repositories.
+Secret scanning is available **for free for public repositories** on all plans. Enterprises that need secret scanning capabilities for private repositories should review [GitHub Advanced Security](https://github.com/security/advanced-security). Not only does it include secret scanning, it also provides advanced static analysis, composition, analysis, and enterprise tools to manage your entire AppSec pipeline and reduce your risk profile.
 
 - **Who is this for**: Developers, DevOps Engineers, security teams.
 - **What you'll learn**: How to identify plain-text credentials in your repository and how to prevent them from being exposed on GitHub in future pushes.
@@ -38,7 +38,7 @@ When copying the exercise, we recommend the following settings:
 - For owner, choose your personal account or an organization to host the repository.
 
 - We recommend creating a public repository, since private repositories will use Actions minutes.
-   
+
 If the exercise isn't ready in 20 seconds, please check the [Actions](../../actions) tab.
 
 - Check to see if a job is running. Sometimes it simply takes a bit longer.

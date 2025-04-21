@@ -1,39 +1,47 @@
-## Step 1: Enable Secret Scanning
+## Step 1: Enable Secret Protection
 
-In this step, you will enable secret scanning on your repository. Once secret scanning is enabled, you will add a new credential to see how secret scanning identifies the credential.
+If you check your email, you probably just got an alert from GitHub with the subject "Possible valid secrets found". Oh no! 😮
 
-**What is a secret**:
-In the context of secret scanning, a secret (or credential) is a plain-text string, or a pair of strings, that authorizes a user to access a service.
+Don't worry! We put some expired credentials in the exercise on purpose since public repositories get secret protection for free. Nice! 🕵️
+
+In this step, you will enable secret protection on your repository. After it is enabled, you will add a new credential to see how secret protection identifies the credential and alerts you.
+
+> [!WARNING]
+> If your repository is private, the you will need [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security) to continue. We recommend to simply [change this exercise repository to public](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility) to enable it.
+
+### What is a secret?
+
+In the context of secret protection, a secret (or credential) is a plain-text string, or a pair of strings, that authorizes access a service.
 Examples could be AWS secret access keys/ID's, Google API keys, or Stripe API tokens.
 The GitHub Docs provides a list of [all supported patterns](https://docs.github.com/en/code-security/secret-scanning/secret-scanning-patterns#supported-secrets).
 
-### :keyboard: Activity: Enable secret scanning
+### :keyboard: Activity: Configure secret protection
 
-For public repositories, secret scanning is enabled by default. If you're working in a public repository, you can skip to the next activity.
+1. Open a new browser tab and navigate to your newly made repository (your copy of this exercise). Then, work on the steps in your second tab while you read the instructions in this tab.
+2. In header of your repository, navigate to the **Settings** tab.
+3. In the left navigation, under the **Security** section, select **Code Security**.
+4. Scroll down past the **Code Scanning** and **Dependabot** sections until you fine the **Secret Protection** section.
+   > 💡 **Tip:** We also have exercise to learn those!
+5. Adjust the default configuration to match the below.
 
-For private or internal repositories, secret scanning is available with [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security).
+   - **Secret Protection:** `enabled`
+   - **Push Protection:** `disabled`
 
-1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
-2. In your newly created repository, select **Settings** from the top navigation bar.
-3. Under the **Security** section on the left side, select **Code security**.
-4. Scroll to the bottom of this page and find the **Secret Protection** area. Click the **Enable** button.
-5. If **push protection** automatically enabled, click the **Disable** button.
-
-> [!IMPORTANT]
-> When you enable secret scanning, you may receive an email notification about credentials in your repository. Don't worry! The tokens in this Skills repository are inactive. There is no risk to your environment.
+   <img width="400" alt="Secret protection configuration settings" src="https://github.com/user-attachments/assets/7b999e54-dbf4-400d-8730-17b96bc06de1" />
 
 ### :keyboard: Activity: Commit a token
 
-Now that you have secret scanning enabled in this repository, let's commit a new token to see how it works. You'll commit an AWS key and access ID to the repository. Don't worry, this is an inactive token that can't be used to log in to AWS.
+Now let's commit a new token to see how it works. Don't worry, this is an inactive credential.
 
-1. You should continue to work on activities in a second browser tab.
-2. Click the **Code** tab in your repository.
-3. Display the `credentials.yml` file.
-4. Click the Edit button to the right.
+1. In the header of your repository, click the **Code** tab.
 
-   ![A screenshot of credentials.yml on the GitHub web interface with the edit button outlined](https://github.com/user-attachments/assets/22025708-306a-4577-96d4-9296bc218a03)
+2. In the list of files, click on the `credentials.yml` file to preview it.
 
-5. Copy the following text and paste it at the bottom of the `credentials.yml` file.
+3. Above the content preview, click the **Edit** button.
+
+   ![A screenshot of credentials.yml on the GitHub web interface with the edit button outlined](https://github.com/user-attachments/assets/f3f1be19-0073-4a44-abf4-e72f5334785c)
+
+4. Copy the following inactive credentials into the `credentials.yml` file.
 
    ```yaml
    default:
@@ -43,5 +51,8 @@ Now that you have secret scanning enabled in this repository, let's commit a new
      region: us-east-2
    ```
 
-6. Click **Commit changes...** at the top right. The "Commit changes" window is displayed. Leave the defaults configured, and click **Commit changes** to commit directly to the `main` branch.
-7. With the file committed, Mona should be busy checking your work. After reviewing, she'll provide feedback and the next learning step.
+5. In the top right, use the **Commit changes...** button to commit directly to the `main` branch.
+
+   > ❗️ **Important:** Committing to your default branch is not usually a recommended practice. We only do this to simplify the exercise.
+
+6. With our credentials file updated, Mona should be busy preparing the next step. You should also receive another alert email.
