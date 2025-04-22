@@ -35,13 +35,13 @@ Now let's commit a new token to see how it works. Don't worry, this is an inacti
 
 1. In the header of your repository, click the **Code** tab.
 
-2. In the list of files, click on the `credentials.yml` file to preview it.
+2. Above the list of files, click the **Add file** dropdown and select **Create new file**.
 
-3. Above the content preview, click the **Edit** button.
+   <img width="350" alt="New file button" src="https://github.com/user-attachments/assets/8f3f8da8-1471-485a-9df5-8c03ecba2d8e"/>
 
-   ![A screenshot of credentials.yml on the GitHub web interface with the edit button outlined](https://github.com/user-attachments/assets/f3f1be19-0073-4a44-abf4-e72f5334785c)
+3. Enter the file name `credentials.yml` and copy following **inactive** example credentials into the `credentials.yml` file.
 
-4. Copy the following inactive credentials into the `credentials.yml` file.
+   <img width="400" alt="New file button" src="https://github.com/user-attachments/assets/40f5ce62-936c-4d71-8c51-02c724d5aac0"/>
 
    ```yaml
    default:
@@ -51,8 +51,8 @@ Now let's commit a new token to see how it works. Don't worry, this is an inacti
      region: us-east-2
    ```
 
-5. In the top right, use the **Commit changes...** button to commit directly to the `main` branch.
+4. In the top right, use the **Commit changes...** button to commit directly to the `main` branch.
 
    > ❗️ **Important:** Committing to your default branch is not usually a recommended practice. We only do this to simplify the exercise.
 
-6. With our credentials file updated, Mona should be busy preparing the next step.
+5. With our credentials file updated, Mona should be busy preparing the next step.
