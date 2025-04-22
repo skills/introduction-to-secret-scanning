@@ -21,7 +21,7 @@ The GitHub Docs provides a list of [all supported patterns](https://docs.github.
 2. In header of your repository, navigate to the **Settings** tab.
 3. In the left navigation, under the **Security** section, select **Code Security**.
 4. Scroll down past the **Code Scanning** and **Dependabot** sections until you find the **Secret Protection** section.
-   > 💡 **Tip:** We also have exercise to learn those!
+   > 💡 **Tip:** We also have exercises about [code scanning](https://github.com/skills/introduction-to-codeql) and [supply chain protection](https://github.com/skills/secure-repository-supply-chain)!
 5. Adjust the default configuration to match the below.
 
    - **Secret Protection:** `enabled`
