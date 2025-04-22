@@ -34,7 +34,7 @@ Now that secret push protection is enabled, let's give it a test!
      github-token: github_pat_<REMOVE_ME>11A4YXR6Y0v36CYFkuT5I1_ZRWX91c8k0waSN6x7AiVJ6zZ9ZHUQXBblBqFQpKd23V6CL7MWMPopnmBxzn
    ```
 
-   ![Screenshot of credentials.yml being edited in the GitHub web interface. A newly added github-token is highlighted.](https://github.com/user-attachments/assets/728f3502-bd0b-4ea7-a956-af9c3e606439)
+   ![Screenshot of credentials.yml being edited in the GitHub web interface. A newly added github-token is highlighted.](https://github.com/user-attachments/assets/9db8e74c-1b83-4db1-9b48-1ab365d862be)
 
 5. In the top right, use the **Commit changes...** button to **try to** commit directly to the `main` branch. Instead of committing the updated file, a push protection alert appeared. Nice! 🥰
 

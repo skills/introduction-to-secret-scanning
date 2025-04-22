@@ -26,7 +26,7 @@ In the last step, you enabled secret protection and committed a sensitive file t
 
 3. Scroll down slightly to the **Detected in X locations** area. Notice that secret protection doesn't create duplicate alerts for the same secret found across multiple locations, for example in our learning issue.
 
-   <img width="400" alt="image" src="https://github.com/user-attachments/assets/2516d6ff-8472-4f46-92d7-dd919ff82f16" />
+   <img width="400" alt="image" src="https://github.com/user-attachments/assets/8c842a86-3e43-4cfe-a57d-60c129008548" />
 
 ### :keyboard: Activity: Close an alert
 
@@ -44,7 +44,7 @@ When secret protection finds a secret in your repository, the first thing you sh
 
 3. The alert status now displays `Closed` and the audit trail includes our explanation.
 
-   <img width="400" alt="image" src="https://github.com/user-attachments/assets/b600739a-351f-421f-86ce-ab463f6ffa6a" />
+   <img width="400" alt="image" src="https://github.com/user-attachments/assets/2f0f9a29-90ab-41f0-abe8-b17f75adc42e" />
 
 4. With at least one of our alerts resolved, let's add a comment to inform Mona we are done with this step, so she can share the next one.
 
