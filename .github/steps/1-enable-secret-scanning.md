@@ -7,7 +7,7 @@ Don't worry! We put some expired credentials in the exercise on purpose since pu
 In this step, you will enable secret protection on your repository. After it is enabled, you will add a new credential to see how secret protection identifies the credential and alerts you.
 
 > [!WARNING]
-> If your repository is private, the you will need [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security) to continue. We recommend to simply [change this exercise repository to public](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility) to enable it.
+> If your repository is private, you will need [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security) to continue. We recommend to [change this exercise repository to public](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility) to enable it.
 
 ### What is a secret?
 
