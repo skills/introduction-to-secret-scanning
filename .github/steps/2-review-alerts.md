@@ -1,6 +1,6 @@
 ## Step 2: Review and close secret scanning alerts
 
-In the last step, you enabled secret protection and committed a sensitive file to the repository. Now, let's review our open secret scanning alerts, verify if an exposed secret is still active, and then close an alert.
+In the last step, you enabled secret protection and committed a sensitive file to the repository. Now, let's review our open secret scanning alerts and close one.
 
 ### :keyboard: Activity: Triage secret scanning alerts
 
@@ -28,39 +28,25 @@ In the last step, you enabled secret protection and committed a sensitive file t
 
    <img width="400" alt="image" src="https://github.com/user-attachments/assets/2516d6ff-8472-4f46-92d7-dd919ff82f16" />
 
-### :keyboard: Activity: Check an alert's validity
-
-Some common services provide options to verify the validity of a secret. In these cases, GitHub can automatically perform a check.
-
-1. Return back to the full list of secret scanning alerts.
-
-2. In the list of open alerts, select the `GitHub Personal Access Token` alert.
-
-3. Near the top, click the **Verify secret** button to perform a check. If the button is not visible, GitHub likely already performed a verification.
-   <img width="400" alt="image" src="https://github.com/user-attachments/assets/9a1fc239-c4b3-43f3-b69b-1abcff1ad6cf" />
-
-4. Scroll down to the end to view the **Audit Log** to see when GitHub last verified this exposed secret.
-
-   <img width="400" alt="image" src="https://github.com/user-attachments/assets/f498a011-1a19-4009-9829-d879d4e9c8db" />
-
 ### :keyboard: Activity: Close an alert
 
-1. When secret protection finds a secret in your repository, the first thing you should do is **disable that secret with the provider**. You should assume it has been exposed.
+When secret protection finds a secret in your repository, the first thing you should do is **disable that secret with the provider**. You should assume it has been exposed.
 
-2. With the secret now inactive, we can update the status of our alert. In the top right, select the **Close as** dropdown.
+> [!TIP]
+> Some [supported secrets](https://docs.github.com/en/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#default-patterns) are automatically sent to the provider when leaked.
+
+1. Assuming you have taken remediation steps, we can update the status of our alert. In the top right, select the **Close as** dropdown.
 
    > 🚨 **Caution:** Do **NOT** close an open alert without performing remediation steps. This simply hides the problem and provides a false sense of security. It might even trigger additional alerts with your cybersecurity department. 🤦
 
-3. Choose the `Revoked` option and enter a useful description of your remediation steps in the comment box. This is important so the audit log can later provide critical information if an investigation is required. Then choose **Close alert**.
-   ![Screenshot of the GitHub Personal Access Token alert, the close alert options are activated and the option "revoked" is highlighted. The comment field has been filled in with "secret inactive".](https://github.com/user-attachments/assets/380ed9d1-4b17-41a6-9a96-1fc28dbb91bd)
+2. Choose the `Revoked` option and enter a useful description of your remediation steps in the comment box. This is important so the audit log can later provide critical information if an investigation is required. Then choose **Close alert**.
+   ![Screenshot of an alert being closed as revoked with a useful comment.](https://github.com/user-attachments/assets/17a6485a-5372-4268-849b-b55834cf89f2)
 
-4. The alert status now displays `Closed` and the audit trail includes our explanation.
+3. The alert status now displays `Closed` and the audit trail includes our explanation.
 
-   <img width="400" alt="image" src="https://github.com/user-attachments/assets/9a1c1bdb-eba7-4ec1-866a-a6ce6df37d8d" />
+   <img width="400" alt="image" src="https://github.com/user-attachments/assets/b600739a-351f-421f-86ce-ab463f6ffa6a" />
 
-   <img width="400" alt="image" src="https://github.com/user-attachments/assets/5fc49f77-3bdc-444a-9f01-e30610d940ae" />
-
-5. With at least one of our alerts resolved, let's add a comment to inform Mona we are done with this step, so she can share the next one.
+4. With at least one of our alerts resolved, let's add a comment to inform Mona we are done with this step, so she can share the next one.
 
    ```txt
    Hello @professortocat, I've resolved some alerts. What's next?
