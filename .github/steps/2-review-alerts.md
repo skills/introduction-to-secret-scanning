@@ -1,6 +1,6 @@
 ## Step 2: Review and close secret scanning alerts
 
-In the last step, you enabled secret protection and committed an AWS credential to the repository. Now, let's review our open secret scanning alerts, verify if an exposed secret is still active, and then close an alert.
+In the last step, you enabled secret protection and committed a sensitive file to the repository. Now, let's review our open secret scanning alerts, verify if an exposed secret is still active, and then close an alert.
 
 ### :keyboard: Activity: Triage secret scanning alerts
 

@@ -18,10 +18,15 @@ The GitHub Docs provides a list of [all supported patterns](https://docs.github.
 ### :keyboard: Activity: Configure secret protection
 
 1. Open a new browser tab and navigate to your newly made repository (your copy of this exercise). Then, work on the steps in your second tab while you read the instructions in this tab.
-2. In header of your repository, navigate to the **Settings** tab.
+
+2. In the header of your repository, navigate to the **Settings** tab.
+
 3. In the left navigation, under the **Security** section, select **Code Security**.
+
 4. Scroll down past the **Code Scanning** and **Dependabot** sections until you find the **Secret Protection** section.
+
    > 💡 **Tip:** We also have exercises about [code scanning](https://github.com/skills/introduction-to-codeql) and [supply chain protection](https://github.com/skills/secure-repository-supply-chain)!
+
 5. Adjust the default configuration to match the below.
 
    - **Secret Protection:** `enabled`
@@ -29,9 +34,9 @@ The GitHub Docs provides a list of [all supported patterns](https://docs.github.
 
    <img width="400" alt="Secret protection configuration settings" src="https://github.com/user-attachments/assets/7b999e54-dbf4-400d-8730-17b96bc06de1" />
 
-### :keyboard: Activity: Commit a token
+### :keyboard: Activity: Commit a sensitive file
 
-Now let's commit a new token to see how it works. Don't worry, this is an inactive credential.
+Now let's (accidentally) commit a sensitive file to see how it works. Don't worry, these is are inactive credentials.
 
 1. In the header of your repository, click the **Code** tab.
 
@@ -39,7 +44,7 @@ Now let's commit a new token to see how it works. Don't worry, this is an inacti
 
    <img width="350" alt="New file button" src="https://github.com/user-attachments/assets/8f3f8da8-1471-485a-9df5-8c03ecba2d8e"/>
 
-3. Enter the file name `credentials.yml` and copy following **inactive** example credentials into the `credentials.yml` file.
+3. Enter the file name `credentials.yml` and copy following **inactive** example credentials into it.
 
    <img width="400" alt="New file button" src="https://github.com/user-attachments/assets/40f5ce62-936c-4d71-8c51-02c724d5aac0"/>
 
@@ -55,4 +60,4 @@ Now let's commit a new token to see how it works. Don't worry, this is an inacti
 
    > ❗️ **Important:** Committing to your default branch is not usually a recommended practice. We only do this to simplify the exercise.
 
-5. With our credentials file updated, Mona should be busy preparing the next step.
+5. With our credentials file (accidentally) shared, Mona should quickly notice it and prepare the next step.
