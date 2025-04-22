@@ -28,10 +28,10 @@ Now that secret push protection is enabled, let's give it a test!
 1. In the header of your repository, click the **Code** tab.
 2. In the list of files, click on the `credentials.yml` file to preview it.
 3. Above the content preview, click the **Edit** button.
-4. Copy the following inactive secret to the file. It should look like the below screenshot.
+4. Copy the following inactive secret to the file, removing the `<REMOVE_ME>` text. It should look like the below screenshot.
 
    ```txt
-     github-token: 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
+     github-token: github_pat_<REMOVE_ME>11A4YXR6Y0v36CYFkuT5I1_ZRWX91c8k0waSN6x7AiVJ6zZ9ZHUQXBblBqFQpKd23V6CL7MWMPopnmBxzn
    ```
 
    ![Screenshot of credentials.yml being edited in the GitHub web interface. A newly added github-token is highlighted.](https://github.com/user-attachments/assets/728f3502-bd0b-4ea7-a956-af9c3e606439)
