@@ -44,11 +44,11 @@ Now let's (accidentally) commit a sensitive file to see how it works. Don't worr
 
 1. In the header of your repository, click the **Code** tab.
 
-2. Above the list of files, click the **Add file** dropdown and select **Create new file**.
+1. Above the list of files, click the **Add file** dropdown and select **Create new file**.
 
    <img width="350" alt="New file button" src="https://github.com/user-attachments/assets/8f3f8da8-1471-485a-9df5-8c03ecba2d8e"/>
 
-3. Enter the file name `credentials.yml` and copy following **inactive** example credentials into it.
+1. Enter the file name `credentials.yml` and copy following **inactive** example credentials into it.
 
    <img width="400" alt="New file button" src="https://github.com/user-attachments/assets/40f5ce62-936c-4d71-8c51-02c724d5aac0"/>
 
@@ -61,8 +61,8 @@ Now let's (accidentally) commit a sensitive file to see how it works. Don't worr
      region: us-east-2
    ```
 
-4. In the top right, use the **Commit changes...** button to commit directly to the `main` branch.
+1. In the top right, use the **Commit changes...** button to commit directly to the `main` branch.
 
    > ❗️ **Important:** Committing to your default branch is not usually a recommended practice. We only do this to simplify the exercise.
 
-5. With our credentials file (accidentally) shared, Mona should quickly notice it and prepare the next step.
+1. With our credentials file (accidentally) shared, Mona should quickly notice it and prepare the next step.
