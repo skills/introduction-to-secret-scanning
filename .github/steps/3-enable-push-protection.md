@@ -27,14 +27,14 @@ Now that secret push protection is enabled, let's give it a test!
 
 1. In the header of your repository, click the **Code** tab.
 2. In the list of files, click on the `credentials.yml` file to preview it.
-3. Above the content preview, click the **Edit** button.
+3. Above the content preview, click the ![pencil-light](https://github.com/user-attachments/assets/a3529727-7b2f-4811-b943-ffabcf0b7d1e) button.
 4. Copy the following inactive secret to the file, removing the `<REMOVE_ME>` text. It should look like the below screenshot.
 
    ```txt
      github-token: github_pat_<REMOVE_ME>11A4YXR6Y0v36CYFkuT5I1_ZRWX91c8k0waSN6x7AiVJ6zZ9ZHUQXBblBqFQpKd23V6CL7MWMPopnmBxzn
    ```
 
-   ![Screenshot of credentials.yml being edited in the GitHub web interface. A newly added github-token is highlighted.](https://github.com/user-attachments/assets/9db8e74c-1b83-4db1-9b48-1ab365d862be)
+   ![Screenshot of credentials.yml being edited in the GitHub web interface. A newly added github-token is highlighted.](https://github.com/user-attachments/assets/5b9a0925-1e91-4568-b13b-d7f438504dde)
 
 5. In the top right, use the **Commit changes...** button to **try to** commit directly to the `main` branch. Instead of committing the updated file, a push protection alert appeared. Nice! 🥰
 
