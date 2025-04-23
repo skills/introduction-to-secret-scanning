@@ -39,14 +39,16 @@ When secret protection finds a secret in your repository, the first thing you sh
 
    > 🚨 **Caution:** Do **NOT** close an open alert without performing remediation steps. This simply hides the problem and provides a false sense of security. It might even trigger additional alerts with your cybersecurity department. 🤦
 
-2. Choose the `Revoked` option and enter a useful description of your remediation steps in the comment box. This is important so the audit log can later provide critical information if an investigation is required. Then choose **Close alert**.
+2. Choose the `Revoked` option and enter a useful description of your remediation steps in the comment box.</br>
+   Example: `The secret owner was contacted they provided proof that they replaced the exposed secret.`</br>
+   This is important so the audit log can later provide critical information if an investigation is required. Then choose **Close alert**.
    ![Screenshot of an alert being closed as revoked with a useful comment.](https://github.com/user-attachments/assets/17a6485a-5372-4268-849b-b55834cf89f2)
 
-3. The alert status now displays `Closed` and the audit trail includes our explanation.
+4. The alert status now displays `Closed` and the audit trail includes our explanation.
 
    <img width="400" alt="image" src="https://github.com/user-attachments/assets/2f0f9a29-90ab-41f0-abe8-b17f75adc42e" />
 
-4. With at least one of our alerts resolved, let's add a comment to inform Mona we are done with this step, so she can share the next one.
+5. With at least one of our alerts resolved, let's add a comment to inform Mona we are done with this step, so she can share the next one.
 
    ```txt
    Hello @professortocat, I've resolved some alerts. What's next?
