@@ -7,16 +7,21 @@ Don't worry! We put some expired credentials in the exercise on purpose since pu
 In this step, you will enable secret protection on your repository. After it is enabled, you will add a new credential to see how secret protection identifies the credential and alerts you.
 
 > [!WARNING]
-> If your repository is private, you will need [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security) to continue. We recommend to [change this exercise repository to public](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility) to enable it.
+> If your repository is private, you will need [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security) to continue. We recommend [changing this exercise repository to public](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility) to enable it.
 
 ### What is a secret?
 
-In the context of secret protection, a secret (or credential) is a plain-text string, or a pair of strings, that authorizes access a service.
-Examples could be AWS secret access keys/ID's, Google API keys, or GitHub Personal Access Tokens.
+In the our context, a secret (or credential) is a plain-text string, or a pair of strings, that authorizes access a service. Examples could be AWS secret access keys/ID's, Google API keys, or GitHub Personal Access Tokens (PATs).
+
 The GitHub Docs provides a list of [all supported patterns](https://docs.github.com/en/code-security/secret-scanning/secret-scanning-patterns#supported-secrets).
 
-### :keyboard: Activity: Configure secret protection
+### What is secret protection?
 
+Secret protection is a powerful tool which allows teams to identify these plain-text credentials, remove them, and create rules to prevent them from being written to GitHub in the first place.
+
+Secret protection is available **for free for public repositories** on all plans. Enterprises that need secret protection capabilities for private repositories should review [GitHub Advanced Security](https://github.com/security/advanced-security). Not only does it include secret protection, it also provides advanced static analysis, composition, analysis, and enterprise tools to manage your entire AppSec pipeline and reduce your risk profile.
+
+### :keyboard: Activity: Configure secret protection
 
 1. In the header of your repository, open **Settings** in a new browser tab.
 

@@ -1,12 +1,10 @@
 # Introduction to secret protection
 
-_GitHub scans repositories for known types of secrets, such as API keys and authentication tokens, to prevent fraudulent use of secrets that were committed accidentally. In this GitHub Skills course you will learn how to enable secret protection to identify secrets and prevent them from being committed to your repository._
+_Learn how to configure secret protection to identify secrets and prevent new ones from being committed to your repository._
 
 ## Welcome
 
-Plain-text credentials accidentally stored in repositories on GitHub are a common target for attackers. In fact, we find well over a million tokens stored on the GitHub platform each year. Secret protection is a powerful tool which allows teams to identify these plain-text credentials, remove them, and create rules to prevent them from being written to GitHub in the first place.
-
-Secret protection is available **for free for public repositories** on all plans. Enterprises that need secret protection capabilities for private repositories should review [GitHub Advanced Security](https://github.com/security/advanced-security). Not only does it include secret protection, it also provides advanced static analysis, composition, analysis, and enterprise tools to manage your entire AppSec pipeline and reduce your risk profile.
+Plain-text credentials accidentally stored in repositories on GitHub are a common target for attackers. In fact, we find well over a million tokens stored on the GitHub platform each year. Let's learn how to prevent that!
 
 - **Who is this for**: Developers, DevOps Engineers, security teams.
 - **What you'll learn**: How to identify plain-text credentials in your repository and how to prevent them from being exposed on GitHub in future pushes.
