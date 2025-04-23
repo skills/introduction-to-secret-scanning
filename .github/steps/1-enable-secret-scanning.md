@@ -12,22 +12,21 @@ In this step, you will enable secret protection on your repository. After it is 
 ### What is a secret?
 
 In the context of secret protection, a secret (or credential) is a plain-text string, or a pair of strings, that authorizes access a service.
-Examples could be AWS secret access keys/ID's, Google API keys, or Stripe API tokens.
+Examples could be AWS secret access keys/ID's, Google API keys, or GitHub Personal Access Tokens.
 The GitHub Docs provides a list of [all supported patterns](https://docs.github.com/en/code-security/secret-scanning/secret-scanning-patterns#supported-secrets).
 
 ### :keyboard: Activity: Configure secret protection
 
-1. Open a new browser tab and navigate to your newly made repository (your copy of this exercise). Then, work on the steps in your second tab while you read the instructions in this tab.
 
-2. In the header of your repository, navigate to the **Settings** tab.
+1. In the header of your repository, open **Settings** in a new browser tab.
 
-3. In the left navigation, under the **Security** section, select **Code Security**.
+1. In the left navigation, under the **Security** section, select **Code Security**.
 
-4. Scroll down past the **Code Scanning** and **Dependabot** sections until you find the **Secret Protection** section.
+1. Scroll down past the **Code Scanning** and **Dependabot** sections until you find the **Secret Protection** section.
 
    > 💡 **Tip:** We also have exercises about [code scanning](https://github.com/skills/introduction-to-codeql) and [supply chain protection](https://github.com/skills/secure-repository-supply-chain)!
 
-5. Adjust the default configuration to match the below.
+1. Adjust the default configuration to match the below.
 
    - **Secret Protection:** `enabled`
    - **Push Protection:** `disabled`
@@ -36,7 +35,7 @@ The GitHub Docs provides a list of [all supported patterns](https://docs.github.
 
 ### :keyboard: Activity: Commit a sensitive file
 
-Now let's (accidentally) commit a sensitive file to see how it works. Don't worry, these is are inactive credentials.
+Now let's (accidentally) commit a sensitive file to see how it works. Don't worry, these are inactive credentials.
 
 1. In the header of your repository, click the **Code** tab.
 

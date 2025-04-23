@@ -51,5 +51,5 @@ When secret protection finds a secret in your repository, the first thing you sh
 5. With at least one of our alerts resolved, let's add a comment to inform Mona we are done with this step, so she can share the next one.
 
    ```txt
-   Hello @professortocat, I've resolved some alerts. What's next?
+   Hello @professortocat, I've resolved the security alert. What's next?
    ```

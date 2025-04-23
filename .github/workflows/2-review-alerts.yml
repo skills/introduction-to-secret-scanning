@@ -64,13 +64,13 @@ jobs:
 
       # The workflow GITHUB_TOKEN doesn't allow us to verify if any alerts were closed.
       # We will trust the learner to ask to proceed.
-      
+
       # END: Check practical exercise
 
       - name: Create comment - step results
         run: |
           gh issue comment "$ISSUE_URL" \
-            --body "Great work reviewing some open alerts! 🎉 This is exactly what we wanted! GitHub detected the token pattern and alerted us so we could handle it properly."
+            --body "Great work reviewing security alerts! 🎉 This is exactly what we wanted! GitHub detected the token pattern and alerted us so we could handle it properly."
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
