@@ -24,7 +24,7 @@ In the last step, you enabled secret protection and committed a sensitive file t
 
    <img width="400" alt="image" src="https://github.com/user-attachments/assets/61700b67-234c-47ae-a4de-552be25cc2bf" />
 
-1. Scroll down slightly to the **Detected in X locations** area. Notice that secret protection doesn't create duplicate alerts for the same secret found across multiple locations, for example in our learning issue.
+1. Scroll down slightly to the **Detected in X locations** area and you will see all the places where this secret was detected, including the `credentials.yml` file that you created. Notice that secret protection doesn't create duplicate alerts for the same secret found across multiple locations, for example in our learning issue.
 
    <img width="400" alt="image" src="https://github.com/user-attachments/assets/8c842a86-3e43-4cfe-a57d-60c129008548" />
 
