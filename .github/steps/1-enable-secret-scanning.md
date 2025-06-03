@@ -11,7 +11,7 @@ In this step, you will enable secret protection on your repository. After it is 
 
 ### What is a secret?
 
-In the our context, a secret (or credential) is a plain-text string, or a pair of strings, that authorizes access a service. Examples could be AWS secret access keys/ID's, Google API keys, or GitHub Personal Access Tokens (PATs).
+In our context, a secret (or credential) is a plain-text string, or a pair of strings, that authorizes access to a service. Examples could be AWS secret access keys/ID's, Google API keys, or GitHub Personal Access Tokens (PATs).
 
 The GitHub Docs provides a list of [all supported patterns](https://docs.github.com/en/code-security/secret-scanning/secret-scanning-patterns#supported-secrets).
 
