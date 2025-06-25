@@ -32,13 +32,14 @@ jobs:
       - name: Get response templates
         uses: actions/checkout@v4
         with:
-          repository: skills/response-templates
-          path: skills-response-templates
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.6.0
 
       - name: Update comment - checking work
         run: |
           gh issue comment "$ISSUE_URL" \
-            --body-file skills-response-templates/step-feedback/checking-work.md \
+            --body-file exercise-toolkit/markdown-templates/step-feedback/checking-work.md \
             --edit-last
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -60,7 +61,7 @@ jobs:
       - name: Create comment - step finished - final review next
         run: |
           gh issue comment "$ISSUE_URL" \
-            --body-file skills-response-templates/step-feedback/lesson-review.md
+            --body-file exercise-toolkit/markdown-templates/step-feedback/lesson-review.md
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
