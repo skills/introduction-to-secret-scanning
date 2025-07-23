@@ -12,7 +12,7 @@ When someone tries to send code changes to GitHub (a push), secret scanning chec
 > We disabled push protection in our first step for learning practice. It is normally enabled by default for all public repositories.
 
 1. In the header of your repository, click the **Settings** tab.
-1. In the left navigation, under the **Security** section, select **Advanced Security**.
+1. In the left navigation, under the **Security** section, select **Code Security**.
 1. Scroll down past the **Code Scanning** and **Dependabot** sections until you find the **Secret Protection** section.
 1. Adjust the default configuration to match the below.
 
@@ -30,8 +30,7 @@ Now that secret push protection is enabled, let's give it a test!
 1. In the list of files, click on the `credentials.yml` file to preview it.
 
 1. Above the content preview, click the **Edit** button.
-
-   <img width="200" alt="pencil-light" src="https://github.com/user-attachments/assets/3dfb1b2e-6fee-4b69-8b38-fc7bfedc8772"/>
+   <img width="200" alt="pencil-light" src="https://github.com/user-attachments/assets/a3529727-7b2f-4811-b943-ffabcf0b7d1e"/>
 
 1. Copy the following inactive secret to the file, removing the `<REMOVE_ME>` text. It should look like the below screenshot.
 
@@ -39,7 +38,7 @@ Now that secret push protection is enabled, let's give it a test!
      github-token: github_pat_<REMOVE_ME>11A4YXR6Y0v36CYFkuT5I1_ZRWX91c8k0waSN6x7AiVJ6zZ9ZHUQXBblBqFQpKd23V6CL7MWMPopnmBxzn
    ```
 
-   ![Screenshot of credentials.yml being edited in the GitHub web interface. A newly added github-token is highlighted.](https://github.com/user-attachments/assets/d5e16dc7-ffa9-422a-bc37-89f5cbb26a2e)
+   ![Screenshot of credentials.yml being edited in the GitHub web interface. A newly added github-token is highlighted.](https://github.com/user-attachments/assets/9db8e74c-1b83-4db1-9b48-1ab365d862be)
 
 1. In the top right, use the **Commit changes...** button to **try to** commit directly to the `main` branch. Instead of committing the updated file, a push protection alert appeared. Nice! 🥰
 
