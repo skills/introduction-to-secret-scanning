@@ -1,6 +1,6 @@
 ## Step 1: Enable Secret Protection
 
-If you check your email, you probably just got an alert from GitHub with the subject "Possible valid secrets detected". Oh no! 😮
+If you check your email, you probably just got an alert from GitHub with the subject "Possible valid secrets found". Oh no! 😮
 
 Don't worry! We put some expired credentials in the exercise on purpose since public repositories get secret protection for free. Nice! 🕵️
 
