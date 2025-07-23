@@ -18,7 +18,7 @@ jobs:
     if: |
       !github.event.repository.is_template
     name: Start Exercise
-    uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.6.0
+    uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.3.0
     with:
       exercise-title: "Introduction to Secret Scanning"
       intro-message: "In this exercise, you'll learn how to identify and protect sensitive information in your repositories. 🔍 Let's work together to keep your code secure! 🛡️"
@@ -37,9 +37,8 @@ jobs:
       - name: Get response templates
         uses: actions/checkout@v4
         with:
-          repository: skills/exercise-toolkit
-          path: exercise-toolkit
-          ref: v0.6.0
+          repository: skills/response-templates
+          path: skills-response-templates
 
       - name: Configure Git user
         run: |
@@ -66,7 +65,7 @@ jobs:
       - name: Create comment - watching for progress
         run: |
           gh issue comment "$ISSUE_URL" \
-            --body-file "exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md"
+            --body-file "skills-response-templates/step-feedback/watching-for-progress.md"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
