@@ -26,7 +26,7 @@ In the last step, you enabled secret protection and committed a sensitive file t
 
 1. Scroll down slightly to the **Detected in X locations** area. Notice that secret protection doesn't create duplicate alerts for the same secret found across multiple locations, for example in our learning issue.
 
-   <img width="400" alt="image" src="https://github.com/user-attachments/assets/0a40db10-0461-4732-8e5d-674082020c96" />
+   <img width="400" alt="image" src="https://github.com/user-attachments/assets/8c842a86-3e43-4cfe-a57d-60c129008548" />
 
 ### :keyboard: Activity: Close an alert
 
@@ -47,14 +47,11 @@ When secret protection finds a secret in your repository, the first thing you sh
 
    > 💡 **Tip:** This is important so the audit log can later provide critical information if an investigation is required.
 
-   <img width="250" alt="Screenshot of an alert being closed as revoked with a useful comment" src="https://github.com/user-attachments/assets/a65bf6be-2be3-4096-9afa-db7a3fb02ecd" />
-
+   ![Screenshot of an alert being closed as revoked with a useful comment.](https://github.com/user-attachments/assets/17a6485a-5372-4268-849b-b55834cf89f2)
 
 1. The alert status now displays `Closed` and the audit trail includes our explanation.
 
-   <img width="250" alt="image" src="https://github.com/user-attachments/assets/fdff5ad5-40ab-4f35-9f37-284dfe129ebd" />
-
-   <img width="450" alt="image" src="https://github.com/user-attachments/assets/29bde02e-88d8-4fe2-b39c-a85a7b705908" />
+   <img width="400" alt="image" src="https://github.com/user-attachments/assets/2f0f9a29-90ab-41f0-abe8-b17f75adc42e" />
 
 1. With at least one of our alerts resolved, let's add a comment to inform Mona we are done with this step, so she can share the next one.
 
