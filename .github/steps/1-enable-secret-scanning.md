@@ -19,7 +19,7 @@ The GitHub Docs provides a list of [all supported patterns](https://docs.github.
 
 Secret protection is a powerful tool which allows teams to identify these plain-text credentials, remove them, and create rules to prevent them from being written to GitHub in the first place.
 
-Secret protection is available **for free for public repositories** on all plans. Enterprises that need secret protection capabilities for private repositories should review [GitHub Advanced Security](https://github.com/security/advanced-security). Not only does it include secret protection, it also provides advanced static analysis, software composition analysis (SCA), and enterprise tools to manage your entire AppSec pipeline and reduce your risk profile.
+Secret protection is available **for free for public repositories** on all plans. Enterprises that need secret protection capabilities for private repositories should review [GitHub Advanced Security](https://github.com/security/advanced-security). Not only does it include secret protection, it also provides advanced static analysis, composition, analysis, and enterprise tools to manage your entire AppSec pipeline and reduce your risk profile.
 
 ### :keyboard: Activity: Configure secret protection
 
