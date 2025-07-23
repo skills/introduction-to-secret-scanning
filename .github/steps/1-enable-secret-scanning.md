@@ -25,7 +25,7 @@ Secret protection is available **for free for public repositories** on all plans
 
 1. In the header of your repository, open **Settings** in a new browser tab.
 
-1. In the left navigation, under the **Security** section, select **Advanced Security**.
+1. In the left navigation, under the **Security** section, select **Code Security**.
 
 1. Scroll down past the **Code Scanning** and **Dependabot** sections until you find the **Secret Protection** section.
 
