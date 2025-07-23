@@ -24,6 +24,6 @@ In addition to the features you worked with here, GitHub Advanced Security also 
 
 ### What's next?
 
-- [Take another Skills Exercise](https://skills.github.com).
+- [Take another Skills Exercise](https://learn.github.com/skills).
 - [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
 - To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
