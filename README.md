@@ -1,10 +1,16 @@
-# Introduction to secret protection
+<header>
 
-_Learn how to configure secret protection to identify secrets and prevent new ones from being committed to your repository._
+# Introduction to secret scanning
+
+_GitHub scans repositories for known types of secrets, such as API keys and authentication tokens, to prevent fraudulent use of secrets that were committed accidentally. In this GitHub Skills course you will learn how to enable secret scanning to identify secrets and prevent them from being committed to your repository._
+
+</header>
 
 ## Welcome
 
-Plain-text credentials accidentally stored in repositories on GitHub are a common target for attackers. In fact, we find well over a million tokens stored on the GitHub platform each year. Let's learn how to prevent that!
+Plain-text credentials accidentally stored in repositories on GitHub are a common target for attackers.  In fact, we find well over a million tokens stored on the GitHub platform each year. Secret scanning is a powerful tool which allows teams to identify these plain-text credentials, remove them, and create rules to prevent them from being written to GitHub in the first place.
+
+Secret scanning is available for free for public repositories on all plans. Enterprises that need secret scanning capabilities for private repositories should review [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security). GitHub Advanced Security allows you to use secret scanning and other security features on private and internal repositories.
 
 - **Who is this for**: Developers, DevOps Engineers, security teams.
 - **What you'll learn**: How to identify plain-text credentials in your repository and how to prevent them from being exposed on GitHub in future pushes.
@@ -13,30 +19,28 @@ Plain-text credentials accidentally stored in repositories on GitHub are a commo
 
 In this course, you will:
 
-1. Enable secret protection
+1. Enable secret scanning
 2. Identify secrets stored in your repository
 3. Enable push protection
 4. Stop secrets from being written to your repository
 
-### How to start this exercise
+### How to start this course
 
-Simply copy the exercise to your account, then give your favorite Octocat (Mona) **about 20 seconds** to prepare the first lesson, then **refresh the page**.
+[![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=skills&template_name=introduction-to-secret-scanning&owner=%40me&name=skills-introduction-to-secret-scanning&description=GitHub+Skills:+Introduction+to+Secret+Scanning&visibility=public)
 
-[![start-exercise](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=skills-dev&template_name=introduction-to-secret-scanning&owner=%40me&name=skills-introduction-to-secret-scanning&description=GitHub+Skills:+Introduction+to+Secret+Scanning&visibility=public)
+1. Right-click **Start course** and open the link in a new tab.
+2. In the new tab, most of the prompts will automatically fill in for you.
+   - For owner, choose your personal account or an organization to host the repository.
+   - You will need to make the repository public, as private repositories do not have access to secret scanning without a [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security) license.
+   - Scroll down and click the **Create repository** button at the bottom of the form.
+3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
-<details>
-<summary>Having trouble? 🤷</summary><br/>
+<footer>
 
-When copying the exercise, we recommend the following settings:
+---
 
-- For owner, choose your personal account or an organization to host the repository.
+Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/introduction-to-secret-scanning) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
 
-- We recommend creating a public repository, since private repositories will use Actions minutes.
+&copy; 2023 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
 
-If the exercise isn't ready in 20 seconds, please check the [Actions](../../actions) tab.
-
-- Check to see if a job is running. Sometimes it simply takes a bit longer.
-
-- If the page shows a failed job, please submit an issue. Nice, you found a bug! 🐛
-
-</details>
+</footer>
