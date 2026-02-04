@@ -46,7 +46,7 @@ Now that secret push protection is enabled, let's give it a test!
    <img width="400" alt="image" src="https://github.com/user-attachments/assets/19099848-4191-4fd7-b52b-be521d7f356c" />
 
 > [!IMPORTANT]
-> Secret Push Protection only scans while _**pushing**_ to GitHub. It cannot check your local commits. If you have a secret in a local commit and it is several commits deep, you will need to remove the secret from your branch's commit history. See [resolving a blocked push on the command line](https://docs.github.com/en/code-security/secret-scanning/pushing-a-branch-blocked-by-push-protection#resolving-a-blocked-push-on-the-command-line).
+> Secret Push Protection only scans while _**pushing**_ to GitHub. It cannot check your local commits. If you have a secret in a local commit and it is several commits deep, you will need to remove the secret from your branch's commit history. See [resolving a blocked push on the command line](https://docs.github.com/en/code-security/how-tos/secure-your-secrets/work-with-leak-prevention/working-with-push-protection-from-the-command-line).
 
 ### :keyboard: Activity: Bypass push protection
 
