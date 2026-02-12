@@ -19,7 +19,7 @@ When someone tries to send code changes to GitHub (a push), secret scanning chec
    - **Secret Protection:** `enabled`
    - **Push Protection:** `enabled`
 
-   <img width="400" alt="Secret protection configuration settings" src="https://github.com/user-attachments/assets/4ecbc9a5-f1b2-4b68-8a1e-667dee7a7661" />
+   <img width="400" alt="Secret protection configuration settings" src="../images/push-protection-enabled-settings.png" />
 
 ### :keyboard: Activity: Attempt to push a secret
 
@@ -31,7 +31,7 @@ Now that secret push protection is enabled, let's give it a test!
 
 1. Above the content preview, click the **Edit** button.
 
-   <img width="200" alt="pencil-light" src="https://github.com/user-attachments/assets/3dfb1b2e-6fee-4b69-8b38-fc7bfedc8772"/>
+   <img width="200" alt="pencil-light" src="../images/edit-file-button.png"/>
 
 1. Copy the following inactive secret to the file, removing the `<REMOVE_ME>` text. It should look like the below screenshot.
 
@@ -39,11 +39,11 @@ Now that secret push protection is enabled, let's give it a test!
      github-token: github_pat_<REMOVE_ME>11A4YXR6Y0v36CYFkuT5I1_ZRWX91c8k0waSN6x7AiVJ6zZ9ZHUQXBblBqFQpKd23V6CL7MWMPopnmBxzn
    ```
 
-   ![Screenshot of credentials.yml being edited in the GitHub web interface. A newly added github-token is highlighted.](https://github.com/user-attachments/assets/d5e16dc7-ffa9-422a-bc37-89f5cbb26a2e)
+   ![Screenshot of credentials.yml being edited in the GitHub web interface. A newly added github-token is highlighted.](../images/credentials-yml-github-token-edit.png)
 
 1. In the top right, use the **Commit changes...** button to **try to** commit directly to the `main` branch. Instead of committing the updated file, a push protection alert appeared. Nice! 🥰
 
-   <img width="400" alt="image" src="https://github.com/user-attachments/assets/19099848-4191-4fd7-b52b-be521d7f356c" />
+   <img width="400" alt="image" src="../images/push-protection-alert-dialog.png" />
 
 > [!IMPORTANT]
 > Secret Push Protection only scans while _**pushing**_ to GitHub. It cannot check your local commits. If you have a secret in a local commit and it is several commits deep, you will need to remove the secret from your branch's commit history. See [resolving a blocked push on the command line](https://docs.github.com/en/code-security/how-tos/secure-your-secrets/work-with-leak-prevention/working-with-push-protection-from-the-command-line).
@@ -54,7 +54,7 @@ In some cases, you may write code that looks similar to a secret and a commit is
 
 1. Select the radio button next to `It's used in tests`. Notice the description, matches our current learning use case.
 
-   <img width="400" alt="image" src="https://github.com/user-attachments/assets/04b51b50-c93b-4bce-ab2a-988ab42e8db2" />
+   <img width="400" alt="image" src="../images/push-protection-bypass-dialog.png" />
 
 1. Click **Allow secret**. A notification banner reports that you can now try committing again.
 
